@@ -1,0 +1,596 @@
+<div id="modalEmployeeUpdate" class="modal fade" tab-index="-1" aria-labelledby="#" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <form name="frmHumanResourcesEmployee" id="frmHumanResourcesEmployee" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHumanResourcesEmployeeTitle">Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#employeeProfile" role="tab">
+                                <span class="d-block d-sm-none"><i class="fas fa-user-cog"></i></span>
+                                <span class="d-none d-sm-block">Profile</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#employeeAddress" role="tab">
+                                <span class="d-block d-sm-none"><i class="fas fa-map-marker-alt"></i></span>
+                                <span class="d-none d-sm-block">Address</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#employeeContactInfo" role="tab">
+                                <span class="d-block d-sm-none"><i class="fas fa-address-book"></i></span>
+                                <span class="d-none d-sm-block">Contacts</span>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#employeeBankDetails" role="tab">
+                                <span class="d-block d-sm-none"><i class="far fa-credit-card"></i></span>
+                                <span class="d-none d-sm-block">Bank</span>
+                            </a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#employeeEmployment" role="tab">
+                                <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                                <span class="d-none d-sm-block">Work</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content p-3 text-muted">
+                        <div class="tab-pane active" id="employeeProfile" role="tabpanel">
+                            <div class="row">
+                                <input type="hidden" id="temp_id" name="temp_id" class="form-control temp_id">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Philsys ID</label>
+                                    <div class="input-group">
+                                        <input id="philsys_id" name="philsys_id" class="form-control"
+                                            data-inputmask="'mask': 'PSN-9999-9999999-9'">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="control-label text-lg-end mb-2">Philsys Date</label>
+                                    <div class="input-group date_picker">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="philsys_doi" name="philsys_doi"
+                                            placeholder="YYYY-MM-DD" />
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Place Issued</label>
+                                    <div class="input-group">
+                                        <input id="philsys_poi" name="philsys_poi" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Title</label>
+                                    <div class="input-group">
+                                        <select name="rtitle_id" id="rtitle_id" required>
+                                            <option value="">Select title...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">First</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="temp_first" name="temp_first"
+                                            placeholder="" required />
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Middlename</label>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text" id="temp_mid" name="temp_mid"
+                                            placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Lastname</label>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text" id="temp_last" name="temp_last"
+                                            placeholder="" required>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Blood Type</label>
+                                    <div class="input-group">
+                                        <select name="temp_blood" id="temp_blood" required>
+                                            <option value="">Select Blood type...</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Suffix</label>
+                                    <div class="input-group">
+                                        <select name="temp_suffice" id="temp_suffice" required>
+                                            <option value="">Select suffix...</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Gender</label>
+                                    <div class="input-group">
+                                        <select name="temp_gender" id="temp_gender" class="container-fluid" required>
+                                            <option value="">Select gender...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-4 mb-3">
+                                    <label class="control-label text-lg-end mb-2">Birthday</label>
+                                    <div class="input-group date_picker">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="temp_dob" name="temp_dob"
+                                            placeholder="YYYY-MM-DD" required />
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Nationality</label>
+                                    <div class="input-group">
+                                        <select name="rcountry_id" id="rcountry_id" required>
+                                            <option value="">Select nationality...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Birthplace</label>
+                                    <div class="input-group">
+                                        <input class="form-control" type="text" id="temp_pob" name="temp_pob"
+                                            placeholder="" required>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Marital Status</label>
+                                    <div class="input-group">
+                                        <select name="temp_marital" id="temp_marital" required>
+                                            <option value="">Select marital...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Religion</label>
+                                    <div class="input-group">
+                                        <select name="rreligion_id" id="rreligion_id" required>
+                                            <option value="">Select Religion...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3 mt-3">
+                                    <h4 class="card-title">Government Mandatory Deduction ID</h4>
+                                    <hr>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">GSIS</label>
+                                    <input class="form-control" type="text" id="temp_gsis" name="temp_gsis"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">SSS</label>
+                                    <input class="form-control" type="text" id="temp_sss" name="temp_sss"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">BIR TIN</label>
+                                    <input class="form-control" type="text" id="temp_birtin" name="temp_birtin"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">PhilHealth</label>
+                                    <input class="form-control" type="text" id="temp_philhealth" name="temp_philhealth"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Pag-Ibig</label>
+                                    <input class="form-control" type="text" id="temp_pagibig" name="temp_pagibig"
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="employeeAddress" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Region</label>
+                                    <div class="input-group">
+                                        <select name="regcode" id="regcode" class="form-control"
+                                            style="width: 100%; height:36px;">
+                                            <option value="">Select region...</option>
+                                        </select required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Province</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="provcode" name="provcode" required>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">City/Town</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="citymuncode" name="citymuncode" required>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Barangay</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="brgycode" name="brgycode" required>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+
+                                    <label class="form-label">Barangay Zone</label>
+                                    <div class="input-group">
+                                        <input type="text" id="temp_zone" name="temp_zone" class="form-control"
+                                            placeholder="" required>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 mb-3">
+
+                                    <label class="form-label">Street Name</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="temp_street" name="temp_street"
+                                            class="form-control" placeholder="" required>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">House/Building/Room Number</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="temp_bldgno" name="temp_bldgno"
+                                            class="form-control" placeholder="" required>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">PO Box</label>
+                                    <input class="form-control" type="text" id="temp_pobox" name="temp_pobox"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Zip Code</label>
+                                    <input class="form-control" type="text" id="temp_zipcode" name="temp_zipcode"
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="employeeContactInfo" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Landline</label>
+                                    <input class="form-control" type="text" id="temp_landline" name="temp_landline"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Mobile</label>
+                                    <div class="input-group">
+
+                                        <input class="form-control" type="text" id="temp_mobile" name="temp_mobile"
+                                            placeholder="" required>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Personal Email</label>
+
+                                    <div class="input-group">
+
+                                        <input class="form-control" type="text" id="temp_email" name="temp_email"
+                                            placeholder="" required>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <div>
+                                        <label class="form-label">Facebook</label>
+                                        <input class="form-control" type="text" id="temp_fb" name="temp_fb"
+                                            placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Whatsapp</label>
+                                    <input class="form-control" type="text" id="temp_whatsapp" name="temp_whatsapp"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Viber</label>
+                                    <input class="form-control" type="text" id="temp_viber" name="temp_viber"
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="tab-pane" id="employeeBankDetails" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <div class="input-group">
+                                        <input type="hidden" id="temp_bank_addressx" name="temp_bank_addressx">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Bank Name</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="rbank_id" name="rbank_id">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Bank Address</label>
+                                    <input class="form-control" type="text" id="temp_bank_address"
+                                        name="temp_bank_address">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Bank Account</label>
+                                    <input class="form-control" type="text" id="temp_bank_account"
+                                        name="temp_bank_account">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="control-label text-lg-end mb-2">ATM Card Date Expire</label>
+                                    <div class="input-group date_picker">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="temp_bank_expire"
+                                            name="temp_bank_expire" placeholder="YYYY-MM-DD" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="tab-pane" id="employeeEmployment" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">Employment Type</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="remployment_type_id" name="remployment_type_id"
+                                            required>
+                                            <option value="">Select Employment Type...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           
+                                <div class="col-md-4 mb-4">
+                                    <label class="form-label">Division</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="rdivision_id" name="rdivision_id" required>
+                                            <option value="">Select division...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Section</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="rdivunit_id" name="rdivunit_id" required>
+                                            <option value="">Select Division Unit...</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                            
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">Reporting To</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="temp_work_reporting_to_id"
+                                            name="temp_work_reporting_to_id" required>
+                                            <option value="">Select Reporting to...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           
+                                <div class="col-md-4 mb-3">
+                                    <label class="control-label text-lg-end mb-2">Date Joined</label>
+                                    <div class="input-group date_picker">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="temp_datejoined"
+                                            name="temp_datejoined" placeholder="YYYY-MM-DD" required />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">Biometric ID</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="temp_biometric_id"
+                                            name="temp_biometric_id" placeholder="" required />
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Employee File No</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="temp_efn" name="temp_efn"
+                                            placeholder="" required />
+                                    </div>
+
+                                </div> -->
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="control-label text-lg-end mb-2">Position</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="rposition_id" name="rposition_id" required>
+                                            <option value="">Select Position...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Grade</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rgradestep_gradeno"
+                                            name="rgradestep_gradeno" placeholder="" readonly />
+                                    </div>
+                                </div> -->
+                                <!-- <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Step</label>
+                                    <div class="input-group">
+                                        
+                                            <select class="form-control" id="rgradestep_stepno" name="rgradestep_stepno" required>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Salary</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rgradestep_salary"
+                                            name="rgradestep_salary" placeholder="" />
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="container-fluid">
+                                <div class="row">
+
+
+                                    <div class="col-lg-2 mb-3">
+                                        <label class="control-label text-lg-end mb-2">Schedule</label>
+                                        <div class="input-group">
+                                            <select class="form-control me-auto rsched_name" id="rsched_name"
+                                                name="rsched_name">
+                                                <option value="">Select Schedule...</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <input type="hidden" id="temp_id" name="temp_id" class="form-control temp_id">
+
+                                    <div class="col-lg-2 mb-3">
+                                        <label class="control-label text-lg-end mb-2">AM IN</label>
+                                        <div class="input-group">
+                                            <input class="form-control me-auto" type="text" id="rsched_amtimein"
+                                                name="rsched_amtimein" aria-label="" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 mb-3">
+                                        <label class="control-label text-lg-end mb-2">AM OUT</label>
+                                        <div class="input-group">
+                                            <input class="form-control me-auto" type="text" id="rsched_amtimeout"
+                                                name="rsched_amtimeout" aria-label="" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 mb-3">
+                                        <label class="control-label text-lg-end mb-2">PM IN</label>
+                                        <div class="input-group">
+                                            <input class="form-control me-auto" type="text" id="rsched_pmtimein"
+                                                name="rsched_pmtimein" aria-label="" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 mb-3">
+                                        <label class="control-label text-lg-end mb-2">PM OUT</label>
+                                        <div class="input-group">
+                                            <input class="form-control me-auto" type="text" id="rsched_pmtimeout"
+                                                name="rsched_pmtimeout" aria-label="" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-2 mb-3">
+                                        <label class="control-label text-lg-end mb-2">Entry</label>
+                                        <div class="input-group">
+                                            <input class="form-control me-auto" type="text" id="rsched_entry"
+                                                name="rsched_entry" aria-label="" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <button type="button" id="btnScheduleAdd" class="btn btn-secondary">Add</button>
+                                    </div>
+
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="row mt-4">
+                                <div class="col-lg-12">
+                                    <table id="tblSchedule"
+                                        class="table table-bordered table-striped table-hover dt-responsive nowrap w-100"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Description</th>
+                                                <th>AM TimeIn</th>
+                                                <th>AM TimeOut</th>
+                                                <th>PM TimeIn</th>
+                                                <th>PM TimeOut</th>
+                                                <th>Entries</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div> 
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-info waves-effect waves-light" id="btnEmployee">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

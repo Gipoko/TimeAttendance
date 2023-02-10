@@ -1,0 +1,214 @@
+<!-- JAVASCRIPT -->
+<script src="{{@BASE}}/public/skote/assets/libs/jquery/jquery.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/jquery-ui-dist/jquery-ui.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script> -->
+<script src="{{@BASE}}/public/js/attendance/moment.js?random={{@random}}"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/node-waves/waves.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/bootstrap-select-1.13.18/dist/js/bootstrap-select.min.js"></script>
+<!-- Responsive examples -->
+<!-- Required datatable js -->
+<script src="{{@BASE}}/public/skote/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+<script src='{{@BASE}}/public/skote/assets/libs/fastclick/fastclick.js'></script>
+<script src="{{@BASE}}/public/skote/assets/libs/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+
+<!-- <script src="{{@BASE}}/public/skote/assets/libs/Bootstrap-4-Chosen-Plugin/dist/js/chosen.jquery.min.js"></script> -->
+<script src="{{@BASE}}/public/skote/assets/libs/select2/js/select2.full.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/jquery-confirm-v3.3.4/dist/jquery-confirm.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
+
+
+<!-- <script src="{{@BASE}}/public/skote/assets/libs/@chenfengyuan/datepicker/datepicker.min.js"></script> -->
+<script src="{{@BASE}}/public/skote/assets/libs/jquery-validation/jquery.validate.min.js"></script>
+
+<!-- form mask init -->
+<script src="{{@BASE}}/public/skote/assets/libs/select2/js/select2.min.js"></script>
+<script src="{{@BASE}}/public/skote/assets/js/pages/form-advanced.init.js"></script>
+
+<script src="{{@BASE}}/public/skote/assets/js/pages/form-mask.init.js"></script>
+
+<script src="{{@BASE}}/public/skote/assets/js/app.js"></script>
+
+<check if="{{@PATH =='/page/human-resources/employee/list/*'}}">
+        <script src="{{@BASE}}/public/js/employee/temp.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/employee/temp-setpayroll.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/employee/temp-schedule.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/employee/details/info/*'}}">
+        <script src="{{@BASE}}/public/skote/assets/libs/webcam/webcam.min.js"></script>
+        <script src="{{@BASE}}/public/js/profile/sel.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/profile/employeeFamilyMembers.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/profile/employeeContactPersons.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/profile/employeeEducation.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/profile/employeeExp.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/profile/employeeSemTraining.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/profile/employeeGovtId.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/profile/employeeCert.js?random={{@random}}"></script>
+        <script src="{{@BASE}}/public/js/profile/cam.js?random={{@random}}"></script>
+</check>
+
+
+<check if="{{@PATH =='/page/employee/details/earning_allowance_deduction/earning_allowance_deduction/*'}}">
+        <script src="{{@BASE}}/public/js/employee/earning-allowance-deduction.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/employee/details/empattendance/index/*'}}">
+        <script src="{{@BASE}}/public/js/employee/empattendance.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/personal-reference/title/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/personal/title.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/personal-reference/bank/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/personal/bank.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/personal-reference/religion/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/personal/religion.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/personal-reference/nationality/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/personal/nationality.js?random={{@random}}"></script>
+</check>
+<check if="{{@PATH =='/page/employee/detail/work/history/*'}}">
+        <script src="{{@BASE}}/public/js/profile/employeeWorkHistory.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/attendance/index/*'}}">
+        <!-- <script type="text/javascript" src="{{@BASE}}/public/skote/assets/libs/xlsxjs/0.17.4/xlsx.min.js"></script>
+        <script type="text/javascript" src="{{@BASE}}/public/skote/assets/libs/xlsxjs/0.17.4/jszip.min.js"></script>
+
+        <script src="https://cdn.datatables.net/fixedcolumns/4.0.1/js/dataTables.fixedColumns.min.js"></script> -->
+        <script src="{{@BASE}}/public/js/attendance/viewAttendance.js?random={{@random}}"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.6.0/jQuery.print.js"></script> -->
+
+        <script src="{{@BASE}}/public/js/attendance/jQuery.print.min.js?random={{@random}}"></script>
+
+       
+        
+</check>
+
+<check if="{{@PATH =='/page/attendance/uploadattendance/*'}}">
+        <script src="{{@BASE}}/public/skote/assets/libs/loading-overlay/loadingoverlay.min.js"></script>
+        
+        <script src="{{@BASE}}/public/js/attendance/attendance-management.js?random={{@random}}"></script>
+       
+        
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/earning/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/earning.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/allowance/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/allowance.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/deduction/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/deduction.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/holiday/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/holiday.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/payrollperiod/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/payrollperiod.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/position/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/position.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/office/section/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/office/section.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/office/division/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/office/division.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/office/division_section_unit/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/office/division-section.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/office/agency/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/office/agency.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/office/branch/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/office/branch.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/office/department/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/office/department.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/loan/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/loan.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/rata/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/rata.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/payrollsettings/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/payrollsettings.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/payrollconfig/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/payrollconfig.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/gradestep/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/gradestep.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/withholdingtax/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/withholdingtax.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/signatory/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/signatory.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/document/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/document.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/schedule/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/schedule.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/payroll/generate-payroll/index/*'}}">
+        <script src="{{@BASE}}/public/js/generate-payroll/generate-payroll.js?random={{@random}}"></script>
+
+        <script src="{{@BASE}}/public/js/attendance/jQuery.print.min.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/user-management/group/index/*'}}">
+        <script src="{{@BASE}}/public/js/user-management/user-group.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/user-management/account/index/*'}}">
+        <script src="{{@BASE}}/public/js/user-management/user-account.js?random={{@random}}"></script>
+</check>
+
+<check if="{{@PATH =='/page/setup/payroll/dtrlegends/index/*'}}">
+        <script src="{{@BASE}}/public/js/setup/payroll/dtrlegends.js?random={{@random}}"></script>
+        
+</check>
+
+<check if="{{@PATH =='/page/visitor/index/*'}}">
+        <script src="{{@BASE}}/public/js/visitor/visitor.js?random={{@random}}"></script>
+        
+</check>

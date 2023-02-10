@@ -1,0 +1,209 @@
+<div class="page-content">
+<div class="card">
+    <div class="card-body border-bottom">
+        <div class="row mb-3">
+            <div class="col-md-4 col-9">
+                <h5 class="font-size-15 mt-1">User Account List</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table id="tblUserAccount" class="table table-bordered table-striped dt-responsive nowrap w-100">
+                    <thead>
+                        <tr>
+                            <th>userid</th>
+                            <th>ID</th>
+                            <th>File No</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Date Joined</th>
+                            <th>hashcode</th>
+                            <th>Job</th>
+                            <th>username</th>
+                            <th>Access Group</th>
+                            <th>group id</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+             </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalUserAccountCreateUsername" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form name="frmUserAccountCreateUsername" id="frmUserAccountCreateUsername" method="POST"
+                class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalUserAccountCreateUsernameTitle">Create Username</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Employee ID</label>
+                            <input type="text" id="empcreateusernameid" name="empcreateusernameid" class="form-control"
+                                placeholder="" readonly>
+                        </div>
+                        <div class="col-lg-12 mb-3" stlye="display:none;">
+                            <label class="form-label">ID</label>
+                            <input type="text" id="cuid" name="cuid" class="form-control" placeholder="" readonly>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" id="brandnew_username" name="brandnew_username" class="form-control"
+                                placeholder="">
+                        </div>
+
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="brand_new_password" name="brand_new_password"
+                                class="form-control" placeholder="">
+                        </div>
+
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Retype Password</label>
+                            <input type="password" id="retype_brand_new_password" name="retype_brand_new_password"
+                                class="form-control" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnEmployee">Save</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="modalUserAccountChangeUsername" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form name="frmUserAccountChangeUsername" id="frmUserAccountChangeUsername" method="POST"
+                class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalUserAccountChangeUsernameTitle">Change Username</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">ID</label>
+                            <input type="text" id="id" name="tuser_ids" class="form-control" placeholder="" readonly>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Current Username</label>
+                            <input type="text" id="old_username" name="old_username" class="form-control" placeholder=""
+                                disabled>
+                        </div>
+
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">New Username</label>
+                            <input type="text" id="username" name="tuser_username" class="form-control"
+                                placeholder="Type new username" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnEmployee">Save</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- change password -->
+<div id="modalUserAccountChangePassword" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form name="frmUserAccountChangePassword" id="frmUserAccountChangePassword" method="POST"
+                class="needs-validation" novalidate>
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalUserAccountChangePasswordTitle">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">ID</label>
+                            <input type="text" id="pid" name="pid" class="form-control" placeholder="" readonly>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Enter New Password</label>
+                            <input type="text" id="new_password" name="new_password" class="form-control"
+                                placeholder="">
+                        </div>
+
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Reset Password</label>
+                            <input type="password" id="password" name="tuser_password" class="form-control"
+                                placeholder="enter new password">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnChangePassword">Save</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- change password -->
+<div id="modalUserAccountUserGroup" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form name="frmUserAccountUserGroup" id="frmUserAccountUserGroup" method="POST" class="needs-validation"
+                novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalUserAccountUserGroupTitle">User Group</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Id</label>
+                            <input type="text" id="uid" name="uid" class="form-control" placeholder="" readonly>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Current User Group</label>
+                            <input type="text" id="user_groupname" name="user_groupname" class="form-control"
+                                placeholder="" disabled>
+                        </div>
+
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">New User Group</label>
+                            <select name="user_group_id" id="user_group_id" class="form-select">
+                                <repeat group="{{ @userGroups }}" value="{{ @userGroup }}" required>
+                                    <option value="{{@userGroup['user_group_id']}}">{{@userGroup['user_group_name']}}
+                                    </option>
+                                </repeat>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnEmployee">Save</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,64 @@
+<div id="modalDocument" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmDocument" id="frmDocument" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Document</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12" style="display:none;">
+                        <div class="mb-3 position-relative">
+                            <label for="rdocument_id" class="form-label">Document ID</label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" id="rdocument_id" name="rdocument_id"
+                                    placeholder="Document ID" aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3 position-relative">
+                            <label for="rdocument_code" class="form-label">Document Type</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rdocument_type" name="rdocument_type"
+                                    placeholder="Document Type" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="rdocument_desc" class="form-label">Description</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rdocument_desc" name="rdocument_desc"
+                                    placeholder="Description" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="rdeduction_status" class="form-label">Status</label>
+                            <div class="input-group">
+                                <select id="rdocument_status" name="rdocument_status" class="form-select">
+
+                                    <option value="ACTIVE">ACTIVE</option>
+                                    <option value="INACTIVE">INACTIVE</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnDocument">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

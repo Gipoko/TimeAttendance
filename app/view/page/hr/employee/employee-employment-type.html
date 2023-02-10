@@ -1,0 +1,51 @@
+<div id="modalChangeEmploymentType" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form id="frmChangeEmploymentType" name="frmChangeEmploymentType" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mySmallModalLabel">Update Employment Type</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        
+                        <input type="hidden" id="EmploymentTypeTempID" name="EmploymentTypeTempID" class="temp_id">
+                        <input type="hidden" id="EmploymentTypeTempWorkID" name="EmploymentTypeTempWorkID">
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-12 mb-3">
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">Curent Employment Type</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="currentEmploymentType" name="currentEmploymentType"
+                                         readonly>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">New Employment Type</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="ddNewEmploymentType" name="ddNewEmploymentType" required>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

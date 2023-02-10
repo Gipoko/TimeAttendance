@@ -1,0 +1,184 @@
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Attendance Management->Upload</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="file" class="form-control" name="file" id="file" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".txt">
+                                    <button class="btn btn-primary" type="button" id="btnUpload2">Upload</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <table id="tblTimesheetLog" class="table table-bordered table-striped table-hover dt-responsive nowrap w-100" >
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>Name</th>
+                                            <th>Year</th>
+                                            <th>Month</th>
+                                            <th>Day 1</th>
+                                            <th>Day 2</th>
+                                            <th>Day 3</th>
+                                            <th>Day 4</th>
+                                            <th>Day 5</th>
+                                            <th>Day 6</th>
+                                            <th>Day 7</th>
+                                            <th>Day 8</th>
+                                            <th>Day 09</th>
+                                            <th>Day 10</th>
+                                            <th>Day 11</th>
+                                            <th>Day 12</th>
+                                            <th>Day 13</th>
+                                            <th>Day 14</th>
+                                            <th>Day 15</th>
+                                            <th>Day 16</th>
+                                            <th>Day 17</th>
+                                            <th>Day 18</th>
+                                            <th>Day 19</th>
+                                            <th>Day 20</th>
+                                            <th>Day 21</th>
+                                            <th>Day 22</th>
+                                            <th>Day 23</th>
+                                            <th>Day 24</th>
+                                            <th>Day 25</th>
+                                            <th>Day 26</th>
+                                            <th>Day 27</th>
+                                            <th>Day 28</th>
+                                            <th>Day 29</th>
+                                            <th>Day 30</th>
+                                            <th>Day 31</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <tbody>
+                                    <tr></tr>
+                                </tbody>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-danger" role="alert">
+                                    Note : Be sure to save any change in the timesheet entries. Forgetting it will overwrite previous entries when uploading a new timesheet having the same year and month.Day without fix and approve button means it is already assumed correct.
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                         <!-- <repeat group="{{ @legend }}" value="{{ @legends }}">
+                            
+                                <span class="bg-info text-white">{{@legends.dtrlegend_code}}  <mark> ={{@legends.dtrlegend_desc}}</mark></span>
+                            
+
+                        </repeat> -->
+                        
+                        <div class="row" id="printlegend">
+
+                            <div class="col-md-4" id="legend">
+                                
+                            </div>
+
+                            <div class="col-md-4" id="newline">
+                                
+                            </div>
+
+                           
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+    </div> <!-- container-fluid -->
+</div>
+
+
+
+<div id="modalLeave" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">Add Leave</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                    </div>
+                    <div class="row">
+                        <select name="cars" id="cars">
+                            <repeat group="{{ @legend }}" value="{{ @legends }}"></repeat>
+                            <option value="{{@legends.dtrlegend_code}}">{{@legends.dtrlegend_code}}</option>
+                           
+                        </repeat>
+                          </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="btnUpdate">Update</button>
+                </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<div id="modalFix" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mySmallModalLabel">Repair DTR</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12 col-12  mb-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm" id="timeEntry" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                <button class="btn btn-success btn-sm" type="button" id="timeEntryAddSave"><i class="bx bx-save font-size-16"></i></button>
+                                <button class="btn btn-success btn-sm" type="button" id="timeEntryEditSave"><i class="bx bx-check font-size-16"></i></button>
+                                <button class="btn btn-warning btn-sm" type="button" id="timeEntryEditCancel"><i class="bx bx-x font-size-16"></i></button>
+                                </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="newTable">
+                                <table id="tempTable"></table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="btnUpdateModalTable">Update</button>
+                </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

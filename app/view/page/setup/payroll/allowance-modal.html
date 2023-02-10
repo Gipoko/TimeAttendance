@@ -1,0 +1,165 @@
+<div id="modalAllowance" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <form name="frmAllowance" id="frmAllowance" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Allowance</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container">
+                        <div class="row">
+                            <input type="hidden" id="rpr_allowance_id" name="rpr_allowance_id">
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_code" class="form-label">Allowance Code</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rpr_allowance_code"
+                                            name="rpr_allowance_code" placeholder="Allowance Code"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 ">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_desc" class="form-label">Allowance Description</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rpr_allowance_desc"
+                                            name="rpr_allowance_desc" placeholder="Allowance Description"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_desc" class="form-label">Default Amount</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rpr_allowance_default_amt"
+                                            name="rpr_allowance_default_amt" placeholder="Default Ammount"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_desc" class="form-label">New Amount</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rpr_allowance_new_amt"
+                                            name="rpr_allowance_new_amt" placeholder="New Ammount"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_desc" class="form-label">Lessthan Threshold</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rpr_allowance_lessthan_threshold"
+                                            name="rpr_allowance_lessthan_threshold" placeholder="Lessthan Threshold"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_desc" class="form-label">Greaterthan Threshold</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rpr_allowance_greaterthan_threshold"
+                                            name="rpr_allowance_greaterthan_threshold"
+                                            placeholder="Greaterthan Threshold"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_tax" class="form-label">Taxable</label>
+                                    <div class="input-group">
+                                        <select name="rpr_allowance_is_taxable" id="rpr_allowance_is_taxable"
+                                            class="form-select">
+                                            <option value="N">No</option>
+                                            <option value="Y">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_status" class="form-label">Status</label>
+                                    <div class="input-group">
+                                        <select name="rpr_allowance_is_active" id="rpr_allowance_is_active"
+                                            class="form-select">
+
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_status" class="form-label">Printable</label>
+                                    <div class="input-group">
+                                        <select name="rpr_allowance_is_printable" id="rpr_allowance_is_printable"
+                                            class="form-select">
+
+                                            <option value="N">No</option>
+                                            <option value="Y">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_desc" class="form-label">Frequency</label>
+                                    <div class="input-group">
+                                        <select name="rpr_allowance_frequency" id="rpr_allowance_frequency"
+                                            class="form-select">
+                                            <option value="N/A">N/A</option>
+                                            <option value="Monthly">Monthly</option>
+                                            <option value="Two Months">Two Months</option>
+                                            <option value="Quarterly">Quarterly</option>
+                                            <option value="Four Months">Four Months</option>
+                                            <option value="Semi-yearly">Semi-yearly</option>
+                                            <option value="Yearly">Yearly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpr_allowance_desc" class="form-label">Formula</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rpr_allowance_formula"
+                                            name="rpr_allowance_formula" placeholder="Formula"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnAllowance">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

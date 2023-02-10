@@ -1,0 +1,258 @@
+<div id="modalGenerate" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body" id="print-area">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <h5>Employee</h5>
+                            <p id="fullName"></p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h5>Payroll Type</h5>
+                            <div class="input-group">
+                                <select name="payroll-type" id="payroll-type"  style="border: 0ch;">
+                                    <option value="0">Select Payroll Type</option>
+                                    <option value="semi-monthly">Kinsenas</option>
+                                    <option value="monthly">Katapusan</option>
+                                   
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h5>Payroll Month</h5>
+                            <select name="dtrPaySlip" id="dtrPaySlip"  style="border: 0ch;">
+                                <option value="0">Select Date</option>
+                                <repeat group="{{@YearMonth}}" value="{{ @Date }}">
+                                    <option value="{{@Date.temp_biorecord_yr}}/{{@Date.temp_biorecord_mnth}}">{{@Date.temp_biorecord_yr}} - {{@Date.temp_biorecord_mnth}}</option>
+                                </repeat>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h5>Basic</h5>
+                            <p id="basicsalary">-------</p>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <h5>Allowance</h5>
+                            <table id="tblAllowance"
+                                class="table table-bordered table-striped table-hover dt-responsive nowrap w-100"
+                                style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="6" style="text-align:right">Total Allowance:</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <h5>Other Earnings</h5>
+                            <table id="tblEarning"
+                                class="table table-bordered table-striped table-hover dt-responsive nowrap w-100"
+                                style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="6" style="text-align:right">Total Earning:</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <h5>Deductions</h5>
+                            <table id="tblDeduction"
+                                class="table table-bordered table-striped table-hover dt-responsive nowrap w-100"
+                                style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th colspan="6" style="text-align:right">Total Deduction:</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="card" style="background-color: rgb(248, 248, 248);">
+                                <div class="card-body">
+                                    <table class="table  table-hover dt-responsive nowrap w-100" style="width:100%">
+                                        <tr>
+                                            <td>Daily Rate</td>
+                                            <td style="text-align:right;">
+                                                <div id="dailyrate">-------</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>(Mins) Rate</td>
+                                            <td style="text-align:right;">
+                                                <div id="minuterate">-------</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Hours Work</td>
+                                            <td style="text-align:right;">
+                                                <div id="totalworkhours">-------</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <!-- <td>No. of day/s Absent</td>
+                                            <td style="text-align:right;">
+                                                <div id="dayabsent">-------</div>
+                                            </td> -->
+                                        </tr>
+                                        <tr>
+                                            <td>Undertime </td>
+                                            <td style="text-align:right;">
+                                                <div id="Undertime">
+                                                    -------
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Overtime</td>
+                                            <td style="text-align:right;">
+                                                <div class="Overtime">
+                                                    -------
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Leave Credits</td>
+                                            <td style="text-align:right;">
+                                                <div id="leave_credits">
+                                                    -------
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Employment type</td>
+                                            <td style="text-align:right;">
+                                                <div id="emptype">
+                                                    -------
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card" style="background-color: rgb(248, 248, 248);">
+                                <div class="card-body">
+                                    <table class="table  table-hover dt-responsive nowrap w-100" style="width:100%">
+                                        <tr>
+                                            <td>Gross Income</td>
+                                            <td style="text-align:right;">
+                                                <div id="grossincome">-------</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Taxable Income</td>
+                                            <td style="text-align:right;">
+                                                <div id="taxableincome">-------</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Withholding Tax</td>
+                                            <td style="text-align:right;">
+                                                <div id="witholdingtax">-------</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Allowance</td>
+                                            <td style="text-align:right;">
+                                                <div id="totalallowance">-------</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Earnings</td>
+                                            <td style="text-align:right;">
+                                                <div id="totalearning">-------</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Deduction</td>
+                                            <td style="text-align:right;">
+                                                <div id="totaldeduction">-------</pdiv>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Net pay</td>
+                                            <td style="text-align:right;">
+                                                <div class="netp" id="netpay">-------</div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p id="signby"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnPrint">Print</button>
+            </div>
+
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

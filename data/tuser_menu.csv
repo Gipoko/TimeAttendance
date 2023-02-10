@@ -1,0 +1,31 @@
+menu_id;menu_parent_id;tuser_accessgroupid;menu_name;menu_route;menu_icon;menu_create;menu_read;menu_update;menu_delete;;menu_level
+1;0;1;Human Resources;;bx bxs-grid-alt;;;;;;2
+2;1;1;Employee List;/page/human-resources/employee/list;;;;;;;3
+3;0;1;Attendance Management;;bx bx-fingerprint;;;;;;2
+4;3;1;Upload Attendance Logs;/page/attendance/upload/*;;;;;;;3
+5;3;1;Set Employee Schedules;/page/attendance/schedule/*;;;;;;;3
+6;0;1;Employee;;bx bxs-user;;;;;;2
+7;6;1;Detailed Information;/page/employee/details/info/*;;;;;;;3
+8;6;1;Attendance;/page/employee/detail/attendance/*;;;;;;;3
+9;6;1;Allowance;/page/employee/detail/allowance/*;;;;;;;3
+10;6;1;Loan;/page/employee/detail/loan/*;;;;;;;3
+11;6;1;Work History;/page/employee/detail/work/history/*;;;;;;;3
+12;0;1;Setup;;bx bx-cog;;;;;;2
+13;12;1;Office;;;;;;;;3
+14;12;1;Payroll;x;;;;;;;3
+15;9;1;Personal References;s;;;;;;;3
+16;13;1;Division;y;;;;;;;4
+17;13;1;Section;z;;;;;;;4
+18;14;1;Position;q;;;;;;;3
+19;14;1;Grade/Step Year;/page/setup/payroll/grade-step/*;;;;;;;4
+20;14;1;Earnings;/page/setup/payroll/earning/index/*;;;;;;;4
+21;14;1;Allowances;/page/setup/payroll/allowance/index/*;;;;;;;4
+22;14;1;Deductions;/page/setup/payroll/deduction/index/*;;;;;;;4
+23;15;1;Title;/page/setup/personal-reference/title/index/*;;;;;;;4
+24;15;1;Nationality;/page/setup/personal-reference/nationality/index/* ;;;;;;;4
+25;15;1;religion;/page/setup/personal-reference/religion/index/*;;;;;;;4
+26;15;1;Bank;/page/setup/personal-reference/bank/index/*;;;;;;;4
+27;0;1;User Management;;bx bx-shield-quarter;;;;;;2
+28;27;1;Access Group;/page/user/access-group;;;;;;;3
+29;27;1;User Account;/page/user/access-account;;;;;;;3
+30;0;1;Logout;/logout;bx bx-log-out;;;;;;2

@@ -1,0 +1,54 @@
+<div id="modalBranch" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmBranch" id="frmBranch" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Branch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12" style="display:none;">
+                        <div class="mb-3 position-relative">
+                            <label for="branch_id" class="form-label">Earning ID</label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" id="rbranch_id" name="rbranch_id"
+                                    placeholder="Earning ID" aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="branch_desc" class="form-label">Branch Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rbranch_name" name="rbranch_name"
+                                    placeholder="Branch Name" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="mb-3 position-relative">
+                            <label for="branch_code" class="form-label">Branch Address</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rbranch_address" name="rbranch_address"
+                                    placeholder="Branch Address" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnBranch">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

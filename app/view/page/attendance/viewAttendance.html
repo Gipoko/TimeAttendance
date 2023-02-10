@@ -1,0 +1,153 @@
+<div class="page-content" id="print-attendance-area">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Attendance Management-> View</h4>
+                </div>
+            </div> -->
+            <style>
+                @media print{
+                    #printlegend{
+                       margin-top: 5%;
+                       
+                    }
+                   
+                }
+                table, td, th {
+                     border: 1px solid black;
+                    
+                    }
+                   
+
+                   
+                 
+            </style>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body" id="print-sra">
+            
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <!-- <span class="h1">
+                                        <img src="{{@BASE}}/public/img/logo.png"alt="" height="80"> 
+                                        Bureau of Internal Revenue
+                                    </span> -->
+                                    <h5 class="text-center">SUMMARY REPORT OF ATTENDANCE - Bureau of Internal Revenue</h5>
+                                 </div>
+                                 
+                                 <div class="col-md-6 text-center">
+                                    <p>Division
+                                        <select name="division" id="division"  style="border: 0ch;">
+                                            <option data-id="0" value="0">Select Division</option>
+                                            <repeat group="{{@division}}" value="{{ @div}}">
+                                                <option value="{{@div.rdivision_id}}" >{{@div.rdivision_code}}</option>
+                                            </repeat>
+                                        </select>
+                                    </p>
+                                   
+                                </div>
+
+                                <div class="col-md-6 text-center">
+                                    <p>For the Month of
+                                        <select name="dtrDate" id="dtrDate" class="dtrDate"  style="border: 0ch;">
+                                            <option data-id="0" value="0">Select Date</option>
+                                            <repeat group="{{@YearMonth}}" value="{{ @Date }}">
+                                                <option value="{{@Date.temp_biorecord_yr}}/{{@Date.temp_biorecord_mnth}}" >{{@Date.temp_biorecord_yr}}-{{@Date.temp_biorecord_mnth}}</option>
+                                            </repeat>
+                                        </select>
+                                    </p>
+                                   
+                                </div>
+
+
+                            </div>
+            
+                            <table id="datatable-buttons" >
+                                <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th style="width:20% ;">Name</th>
+                                    <th style="width:2%">Day 1</th>
+                                    <th style="width:2%">Day 2</th>
+                                    <th style="width:2%">Day 3</th>
+                                    <th style="width:2%">Day 4</th>
+                                    <th style="width:2%">Day 5</th>
+                                    <th style="width:2%">Day 6</th>
+                                    <th style="width:2%">Day 7</th>
+                                    <th style="width:2%">Day 8</th>
+                                    <th style="width:2%">Day 9</th>
+                                    <th style="width:2%">Day 10</th>
+                                    <th style="width:2%">Day 11</th>
+                                    <th style="width:2%">Day 12</th>
+                                    <th style="width:2%">Day 13</th>
+                                    <th style="width:2%">Day 14</th>
+                                    <th style="width:2%">Day 15</th>
+                                    <th style="width:2%">Day 16</th>
+                                    <th style="width:2%">Day 17</th>
+                                    <th style="width:2%">Day 18</th>
+                                    <th style="width:2%">Day 19</th>
+                                    <th style="width:2%">Day 20</th>
+                                    <th style="width:2%">Day 21</th>
+                                    <th style="width:2%">Day 22</th>
+                                    <th style="width:2%">Day 23</th>
+                                    <th style="width:2%">Day 24</th>
+                                    <th style="width:2%">Day 25</th>
+                                    <th style="width:2%">Day 26</th>
+                                    <th style="width:2%">Day 27</th>
+                                    <th style="width:2%">Day 28</th>
+                                    <th style="width:2%">Day 29</th>
+                                    <th style="width:2%">Day 30</th>
+                                    <th style="width:2%">Day 31</th>
+                                    <th style="width:2%"></th>
+                                    <th style="width:2%"></th>
+                                    <th style="width:2%"></th>
+                                    <th style="width:2%"></th>
+                                    <th style="width:2%"></th>
+                                    <th style="width:2%"></th>
+                                    <th style="width:2%"></th>
+                                    
+                                </tr>
+                                </thead>
+            
+            
+                             <tbody>
+            
+                             </tbody>
+                            </table>
+                            <div class="row" id="printlegend">
+
+                                <div class="col-md-4" id="legend">
+                                    
+                                </div>
+
+                                <div class="col-md-4" id="newline">
+                                    
+                                </div>
+
+                                <div id="remarks" class="col-md-4">
+                                    <p class="h6">REMARKS</p>
+                                   
+                                </div>
+
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3 h6">Prepared by:</div>
+                                <div class="col-md-3 h6">Approve by:</div>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+                <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnSraPrint">Print</button>
+            </div> <!-- end row -->
+           
+            <!-- end col -->
+        </div>
+    </div> <!-- container-fluid -->
+</div>
+
+
+

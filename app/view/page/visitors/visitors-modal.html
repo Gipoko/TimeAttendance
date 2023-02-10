@@ -1,0 +1,90 @@
+<div id="modalVisitor" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmVisitor" id="frmVisitor" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Visitor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12" style="display:none;">
+                        <div class="mb-3 position-relative">
+                            <label for="visitors_id" class="form-label">Earning ID</label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" id="visitors_id" name="visitors_id"
+                                    placeholder="Earning ID" aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="visitors_name" class="form-label">Visitor Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="visitors_name" name="visitors_name"
+                                    placeholder="Visitor Name" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="visitor_company" class="form-label">Visitor Company</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="visitors_company" name="visitors_company"
+                                    placeholder="Visitor Company" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="visitor_visit_department" class="form-label">Visit Department</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="visitors_visit_department" name="visitors_visit_department"
+                                    placeholder="Visit Department" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="visitor_visit_host" class="form-label">Visit Host</label>
+                            <div class="input-group">
+                                <select class="form-control " id="visitors_visit_host" name="visitors_visit_host">
+                                    <option value="">Select</option>
+                                    <repeat group="{{ @emp }}" value="{{ @emps }}">
+                                        <option value="{{@emps.temp_first}} {{@emps.temp_mid}} {{@emps.temp_last}}">{{@emps.temp_first}} {{@emps.temp_mid}} {{@emps.temp_last}}</option>
+                                    </repeat>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="visitor_visit_reason" class="form-label">Visitor Reason</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="visitors_visit_reason" name="visitors_visit_reason"
+                                    placeholder="Reason" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnVisitor">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

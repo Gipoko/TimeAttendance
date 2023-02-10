@@ -1,0 +1,74 @@
+<div class="modal fade" id="modalEmployeeExperience" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <form id="frmEmployeeExperience" name="frmEmployeeExperience" method="POST">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEmployeeExperienceTitle">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <input class="form-control" type="hidden"
+                        id="temp_exp_id"
+                        name="temp_exp_id">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <label class="form-label">Job Title</label>
+                        <input class="form-control" type="text"
+                        id="temp_exp_position"
+                        name="temp_exp_position"
+                        placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <label class="form-label">Company Name</label>
+                        <input class="form-control" type="text"
+                        id="temp_exp_companyname"
+                        name="temp_exp_companyname"
+                        placeholder="" required>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                        <label class="form-label">Company Address</label>
+                        <input class="form-control" type="text"
+                            id="temp_exp_companyaddress"
+                            name="temp_exp_companyaddress"
+                            placeholder="" required>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">From</label>
+                        <input class="form-control" type="text"
+                        id="temp_exp_from"
+                        name="temp_exp_from"
+                        placeholder="" required>
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">To</label>
+                        <input class="form-control" type="text"
+                        id="temp_exp_to"
+                        name="temp_exp_to"
+                        placeholder="" required>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                        <label class="form-label">Job Description</label>
+                            <textarea id="temp_exp_jobdesc" name="temp_exp_jobdesc" rows="7" class="form-control" required>
+                                </textarea>
+                    </div>
+                </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnEmployeeExperienceSave">Save</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

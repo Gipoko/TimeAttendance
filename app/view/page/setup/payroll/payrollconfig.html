@@ -1,0 +1,426 @@
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Payroll Configuration</h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Manage Payroll Configuration</h4>
+                    <form id="payrollconfig" method="POST">
+
+                        <input type="hidden" name="rpayconfig_id" id="rpayconfig_id" value="{{@POST.rpayconfig_id}}">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <h4 class="text-info"></h4>
+                                <label for="rpayconfig_payroll_year" class="form-label">Payroll Year</label>
+                                <input type="text" class="form-control" id="rpayconfig_payroll_year"
+                                    name="rpayconfig_payroll_year" value="{{@POST.rpayconfig_payroll_year}}">
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="text-info"></h4>
+                                <label for="formrow-firstname-input" class="form-label">Branch</label>
+                                <input type="text" class="form-control" id="rpayconfig_branch" name="rpayconfig_branch"
+                                    value="{{@POST.rpayconfig_branch}}">
+                            </div>
+
+                            <div class="col-md-4">
+                                <h4 class="text-info"></h4>
+                                <label for="formrow-firstname-input" class="form-label">Tax Identification
+                                    Number</label>
+                                <input type="text" class="form-control" id="rpayconfig_tax_identification_number"
+                                    name="rpayconfig_tax_identification_number"
+                                    value="{{@POST.rpayconfig_tax_identification_number}}">
+                            </div>
+
+                            <div class="col-md-4">
+                                <h4 class="text-info"></h4>
+                                <label for="formrow-firstname-input" class="form-label">GSIS Number</label>
+                                <input type="text" class="form-control" id="rpayconfig_gsis_number"
+                                    name="rpayconfig_gsis_number" value="{{@POST.rpayconfig_gsis_number}}">
+                            </div>
+
+                            <div class="col-md-4">
+                                <h4 class="text-info"></h4>
+                                <label for="formrow-firstname-input" class="form-label">Account Number</label>
+                                <input type="text" class="form-control" id="rpayconfig_account_number"
+                                    name="rpayconfig_account_number" value="{{@POST.rpayconfig_account_number}}">
+                            </div>
+
+                            <div>
+                            </div>
+
+                        </div>
+                        <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class=" text-info card-title mb-4">GSIS Contribution</h4>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Employee Share <span
+                                            class="text-danger">(%)</span></label>
+                                    <input type="text" class="form-control" id="rpayconfig_employee_gsis_rate"
+                                        name="rpayconfig_employee_gsis_rate"
+                                        value="{{@POST.rpayconfig_employee_gsis_rate}}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Employer Share <span
+                                            class="text-danger">(%)</span></label>
+                                    <input type="text" class="form-control" id="rpayconfig_employer_gsis_rate"
+                                        name="rpayconfig_employer_gsis_rate"
+                                        value="{{@POST.rpayconfig_employer_gsis_rate}}">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+            <!-- end col -->
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-info card-title mb-4">PAGIBIG Contribution</h4>
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Employer Share Ammount<span
+                                        class="text-danger">(₱)</span></label>
+                                <input type="text" class="form-control input-mask text-start"
+                                    data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'"
+                                    name="rpayconfig_employer_pagibig_amount" id="rpayconfig_employer_pagibig_amount"
+                                    value="{{@POST.rpayconfig_employer_pagibig_amount}}">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-info card-title mb-4">PhilHealth Contribution</h4>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Fixed Ammount<span
+                                            class="text-danger">(₱)</span></label>
+                                    <input type="text" class="form-control input-mask text-start"
+                                        data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'"
+                                        name="rpayconfig_philhealth_rate_fixed" id="rpayconfig_philhealth_rate_fixed"
+                                        value="{{@POST.rpayconfig_philhealth_rate_fixed}}"><span
+                                        class="text-success">(P10,000.00 and
+                                        below)</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Percentage <span
+                                            class="text-danger">(%)</span></label>
+                                    <input type="text" class="form-control" name="rpayconfig_philhealth_rate_percent"
+                                        id="rpayconfig_philhealth_rate_percent"
+                                        value="{{@POST.rpayconfig_philhealth_rate_percent}}"><span
+                                        class="text-success">(P10,000.01 to
+                                        P39,999.99)</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Fixed Ammount<span
+                                            class="text-danger">(₱)</span></label>
+                                    <input type="text" class="form-control input-mask text-start"
+                                        data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'"
+                                        name="rpayconfig_philhealth_rate_fixed2" id="rpayconfig_philhealth_rate_fixed2"
+                                        value="{{@POST.rpayconfig_philhealth_rate_fixed2}}"><span
+                                        class="text-success">(P40,000.00 and
+                                        above)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-info card-title mb-4"></h4>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">E.C.C Amount <span
+                                            class="text-danger">(₱)</span></label>
+                                    <input type="text" class="form-control input-mask text-start"
+                                        data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'"
+                                        name="rpayconfig_acpcea_amount" id="rpayconfig_acpcea_amount"
+                                        value="{{@POST.rpayconfig_acpcea_amount}}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Pera Ammount<span class="text-danger">(₱)</span>
+                                    </label>
+                                    <input type="text" class="form-control input-mask text-start"
+                                        data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'"
+                                        name="rpayconfig_pera_amount" id="rpayconfig_pera_amount"
+                                        value="{{@POST.rpayconfig_pera_amount}}" required data-parsley-max="6">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">E-COLA Ammount<span
+                                            class="text-danger">(₱)</span></label>
+                                    <input type="text" class="form-control input-mask text-start"
+                                        data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'"
+                                        name="rpayconfig_monthly_ecola_amount" id="rpayconfig_monthly_ecola_amount"
+                                        value="{{@POST.rpayconfig_monthly_ecola_amount}}">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-info card-title mb-4">Rest Day</h4>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Rest Day Overtime Rate <span
+                                            class="text-danger">(%)</span></label>
+                                    <input type="text" class="form-control"
+                                        name="rpayconfig_daily_restday_overtime_rate"
+                                        id="rpayconfig_daily_restday_overtime_rate"
+                                        value="{{@POST.rpayconfig_daily_restday_overtime_rate}}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Excess of 8 Hours Rate <span
+                                            class="text-danger">(%)</span></label>
+                                    <input type="text" class="form-control" name="rpayconfig_daily_restday_excess_rate"
+                                        id="rpayconfig_daily_restday_excess_rate"
+                                        value="{{@POST.rpayconfig_daily_restday_excess_rate}}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-info card-title mb-4">Regular Day</h4>
+
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Regular Overtime Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control" name="rpayconfig_daily_regular_overtime_rate"
+                                    id="rpayconfig_daily_regular_overtime_rate"
+                                    value="{{@POST.rpayconfig_daily_regular_overtime_rate}}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Regular Night Shift Diff. Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control" name="rpayconfig_daily_regular_nightdiff_rate"
+                                    id="rpayconfig_daily_regular_nightdiff_rate"
+                                    value="{{@POST.rpayconfig_daily_regular_nightdiff_rate}}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Overtime Night Shift Diff. Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_regular_overtime_nightdiff_rate"
+                                    id="rpayconfig_daily_regular_overtime_nightdiff_rate"
+                                    value="{{@POST.rpayconfig_daily_regular_overtime_nightdiff_rate}}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Regular Overtime Excess Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_regular_overtime_excess_rate"
+                                    id="rpayconfig_daily_regular_overtime_excess_rate"
+                                    value="{{@POST.rpayconfig_daily_regular_overtime_excess_rate}}">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-info card-title mb-4">Special Holiday</h4>
+
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Special Holiday Overtime Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_special_holiday_overtime_rate"
+                                    id="rpayconfig_daily_special_holiday_overtime_rate"
+                                    value="{{@POST.rpayconfig_daily_special_holiday_overtime_rate}}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Excess of 8 Hours Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_special_holiday_excess_rate"
+                                    id="rpayconfig_daily_special_holiday_excess_rate"
+                                    value="{{@POST.rpayconfig_daily_special_holiday_excess_rate}}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Rest Day Overtime Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_special_holiday_restday_overtime_rate"
+                                    id="rpayconfig_daily_special_holiday_restday_overtime_rate"
+                                    value="{{@POST.rpayconfig_daily_special_holiday_restday_overtime_rate}}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Rest Day Excess of 8 Hours Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_special_holiday_restday_excess_rate"
+                                    id="rpayconfig_daily_special_holiday_restday_excess_rate"
+                                    value="{{@POST.rpayconfig_daily_special_holiday_restday_excess_rate}}">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="text-info card-title mb-4">Legal Holiday</h4>
+
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Legal Holiday Overtime Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_legal_holiday_overtime_rate"
+                                    id="rpayconfig_daily_legal_holiday_overtime_rate"
+                                    value="{{@POST.rpayconfig_daily_legal_holiday_overtime_rate}}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Excess of 8 Hours Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_legal_holiday_excess_rate"
+                                    id="rpayconfig_daily_legal_holiday_excess_rate"
+                                    value="{{@POST.rpayconfig_daily_legal_holiday_excess_rate}}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Rest Day Overtime Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_legal_holiday_restday_overtime_rate"
+                                    id="rpayconfig_daily_legal_holiday_restday_overtime_rate"
+                                    value="{{@POST.rpayconfig_daily_legal_holiday_restday_overtime_rate}}">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Rest Day Excess of 8 Hours Rate <span
+                                        class="text-danger">(%)</span></label>
+                                <input type="text" class="form-control"
+                                    name="rpayconfig_daily_legal_holiday_restday_excess_rate"
+                                    id="rpayconfig_daily_legal_holiday_restday_excess_rate"
+                                    value="{{@POST.rpayconfig_daily_legal_holiday_restday_excess_rate}}">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+            <div style="display:flex; justify-content:flex-end; width:100%; padding:0;">
+                <button type="submit" name="btnupdate" id="btnupdate" class="btn btn-primary w-md">Submit</button>
+            </div>
+            </form>
+            <!-- end col -->
+
+        </div>
+    </div>

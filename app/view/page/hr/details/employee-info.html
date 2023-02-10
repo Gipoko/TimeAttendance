@@ -1,0 +1,433 @@
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Employee Profile</h4>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="card overflow-hidden">
+                    <div class="bg-primary bg-soft">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="text-primary p-3">
+                                    <h5 class="text-primary">Detailed Information</h5>
+                                    <p>Update your info</p>
+                                </div>
+                            </div>
+                            <div class="col-5 align-self-end">
+                                <img src="{{@BASE}}/public/skote/assets/images/profile-img.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="avatar-md profile-user-wid mb-3">
+                                    <img src="{{@BASE}}/public/employee/picture/{{@SESSION.temp_hashcode}}.png?{{time()}}"  alt="" width="230" height="160" class="img-thumbnail rounded-circle imgChangePicture">
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h4 class="card-title mb-4">Detailed Information</h4>
+                            <div class="table-responsive">
+                                <table class="table table-nowrap mb-0" style="width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Name</th>
+                                            <td>{{@temp[0]['temp_first']}} {{@temp[0]['temp_mid']}} {{@temp[0]['temp_last']}} {{@temp[0]['rsuffix_id']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Philsys ID</th>
+                                            <td>{{@temp[0]['philsys_id']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Date Issued</th>
+                                            <td>{{@temp[0]['philsys_doi']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Place Issued</th>
+                                            <td>{{@temp[0]['philsys_poi']}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Blood Type</th>
+                                            <td>{{@temp[0]['temp_blood']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Gender</th>
+                                            <td>{{@temp[0]['temp_gender']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Birthday</th>
+                                            <td>{{@temp[0]['temp_dob']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Religion</th>
+                                            <td>{{@temp[0]['rreligion_desc']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Marital</th>
+                                            <td>{{@temp[0]['temp_marital']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Birthplace</th>
+                                            <td>{{@temp[0]['temp_pob']}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Region</th>
+                                            <td>{{@temp[0]['regdesc']}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Province</th>
+                                            <td>{{@temp[0]['provdesc']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Town/City</th>
+                                            <td>{{@temp[0]['citymundesc']}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Barangay</th>
+                                            <td>{{@temp[0]['brgydesc']}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Address</th>
+                                            <td>#{{@temp[0]['temp_bldgno']}},&nbsp;{{@temp[0]['temp_street']}} st.</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Mobile</th>
+                                            <td>{{@temp[0]['temp_mobile']}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Email</th>
+                                            <td>{{@temp[0]['temp_email']}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <h4 class="card-title mb-4">Bank Information</h4>
+                            <div class="table-responsive">
+                                <table class="table table-nowrap mb-0" style="width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Name</th>
+                                            <td>{{@temp[0]['rbank_name']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Address</th>
+                                            <td>{{@temp[0]['temp_bank_address']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Account</th>
+                                            <td>{{@temp[0]['temp_bank_account']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Expiration</th>
+                                            <td>{{@temp[0]['temp_bank_expire']}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <h4 class="card-title mb-4">Government Mandatory IDs</h4>
+                            <div class="table-responsive">
+                                <table class="table table-nowrap mb-0" style="width:100%">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">GSIS</th>
+                                            <td>{{@temp[0]['temp_gsis']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">SSS</th>
+                                            <td>{{@temp[0]['temp_sss']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">BIR</th>
+                                            <td>{{@temp[0]['temp_birtin']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">PhilHealth</th>
+                                            <td>{{@temp[0]['temp_philhealth']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">HDMF (Pag-Ibig)</th>
+                                            <td>{{@temp[0]['temp_pagibig']}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end card -->
+
+            </div>         
+            
+            <div class="col-xl-8">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="float-end">
+
+                                <button type="button" class="btn waves-effect waves-light" 
+                                id="btnEmployeeProfileFamilyMemberAdd">
+                                    <i class="fas fa-user-plus m-0 text-muted h6"></i></button>
+                            </div>
+                            <h4 class="card-title mt-1 mb-3">Family Members</h4>
+                            <div class="row"></div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="table-responsive">
+                                        <table id="tblEmployeeFamilyMembers"
+                                        class="display responsive table table-bordered table-striped dt-responsive nowrap w-100" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th data-priority="2">Fullname</th>
+                                                <th class="min-phone-l">Relationship</th>
+                                                <th class="min-phone-l">Birthday</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contact person -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <button type="button" class="btn waves-effect waves-light" 
+                                    id="btnEmployeeContactPersonAdd">
+                                    <i class="far fa-address-book m-0 text-muted h5"></i></button>
+                                </div> <!-- end dropdown -->
+
+                                <h4 class="card-title mt-1 mb-3">Contact Persons</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table id="tblEmployeeContactPersons"
+                                            class="table table-bordered table-striped dt-responsive nowrap w-100" style="width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Fullname</th>
+                                                    <th>Mobile</th>
+                                                    <th>Relationship</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- education -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <button type="button" class="btn waves-effect waves-light" 
+                                    id="btnHumanResourcesEmployeeEducationAdd">
+                                    <i class="fas fa-school m-0 text-muted h6"></i></button>
+                                </div> <!-- end dropdown -->
+
+                                <h4 class="card-title mt-1 mb-3">Education</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <table id="tblEmployeeEducation"
+                                        class="table table-bordered table-striped dt-responsive nowrap w-100" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Schoolname</th>
+                                                <th>Level</th>
+                                                <th>Course/Specialization</th>
+                                                <th>From</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- work Experiences -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <button type="button" class="btn waves-effect waves-light" 
+                                    id="btnEmployeeWorkExperienceAdd">
+                                    <i class="fas fa-cog m-0 text-muted h5"></i></button>
+                                </div> <!-- end dropdown -->
+
+                                <h4 class="card-title mt-1 mb-3">Work Experiences</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table id="tblEmployeeExperience"
+                                            class="table table-bordered table-striped dt-responsive nowrap w-100" style="width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Position</th>
+                                                    <th>Job Description</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <!-- government id -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <button type="button" class="btn waves-effect waves-light" 
+                                    id="btnEmployeeGovtIdAdd">
+                                    <i class="fas fa-address-card m-0 text-muted h5"></i></button>
+                                </div> <!-- end dropdown -->
+
+                                <h4 class="card-title mt-1 mb-3">Government IDs</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table id="tblEmployeeGovtId"
+                                            class="table table-bordered table-Striped table-hover dt-responsive nowrap w-100" style="width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Government ID</th>
+                                                        <th>Issued</th>
+                                                        <th>Expire</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- seminar training --> 
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <button type="button" class="btn waves-effect waves-light" 
+                                    id="btnEmployeeGovtIdAdd">
+                                    <i class="fas fa-chalkboard-teacher m-0 text-muted h5"></i></button>
+                                </div> <!-- end dropdown -->
+
+                                <h4 class="card-title mt-1 mb-3">Seminars/Trainings/Workshops</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table id="tblEmployeeSemTraining"
+                                            class="table table-bordered table-Striped table-hover dt-responsive nowrap w-100" style="width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Event</th>
+                                                        <th>When</th>
+                                                        <th>Where</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- certificate and licenses --> 
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <button type="button" class="btn waves-effect waves-light" 
+                                    id="btnEmployeeCertAdd">
+                                    <i class="fas fa-certificate m-0 text-muted h5"></i></button>
+                                </div> <!-- end dropdown -->
+
+                                <h4 class="card-title mt-1 mb-3">Certificates/Licenses</h4>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table id="tblEmployeeCert"
+                                            class="table table-bordered table-Striped table-hover dt-responsive nowrap w-100" style="width: 100%;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th class="text-wrap wrap-200">Certificate/License Name</th>
+                                                        <th>Issued</th>
+                                                        <th>Expire</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+    </div> <!-- container-fluid -->
+</div>
+    <!-- End Page-content --> 
+
+<include href = "page/hr/details/employeeCam.html">
+<include href = "page/hr/details/employeeFamilyMembers.html">
+<include href = "page/hr/details/employeeContactPersons.html">
+<include href = "page/hr/details/employeeEducation.html"> 
+<include href = "page/hr/details/employeeWorkExperience.html">
+<include href = "page/hr/details/employeeSemTraining.html">
+<include href = "page/hr/details/employeeGovtId.html">
+<include href = "page/hr/details/employeeCert.html">

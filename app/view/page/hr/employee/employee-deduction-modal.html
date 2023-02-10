@@ -1,0 +1,80 @@
+<div id="deductionModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="tdeduction" id="" method="POST" class="needs-validation tdeduction" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Update</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="col-md-12">
+                        <div class="mb-3 position-relative">
+                            <label for="" class="form-label"></label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="temp_deduction_id" name="temp_deduction_id"
+                                    placeholder="" aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="rrata_status" class="form-label">Code</label>
+                            <div class="input-group">
+                                <select name="rdeduction_code" id="" class="form-select rdeduction_code">
+                                    <repeat group="{{ @rpr_deduction }}" value="{{ @deduction }}">
+                                        <option value="{{@deduction.rpr_deduction_code}}">
+                                            {{@deduction.rpr_deduction_code}}
+                                        </option>
+                                    </repeat>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="mb-3 position-relative">
+                            <label for="" class="form-label">Default Amount</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rdeduction_default_amt"
+                                    name="rdeduction_default_amt" placeholder=""
+                                    aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="mb-3 position-relative">
+                            <label for="" class="form-label">Tax %</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rdeduction_percentage_tax"
+                                    name="rdeduction_percentage_tax" placeholder=""
+                                    aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="mb-3 position-relative">
+                            <label for="" class="form-label">Additional</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rdeduction_additional"
+                                    name="rdeduction_additional" placeholder=""
+                                    aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnDeduction">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

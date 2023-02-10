@@ -1,0 +1,419 @@
+<div class="page-content" id="print-attendance-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Attendance</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+            
+
+                            <div class="modal-body" id="print-Dtrarea">
+                                <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-12 text-center">
+                                          <span class="h1">
+                                              <img src="{{@BASE}}/public/img/logo.png"alt="" height="80"> 
+                                              Bureau of Internal Revenue
+                                          </span>
+                                          <h4 class="text-center">DAILY TIME RECORD</h4>
+                                       </div>
+                      
+                                       <div class="col-md-12 text-center">
+                                          <u><h5 id="Name"></h5></u>
+                                       </div>
+                      
+                                       <div class="col-md-6 text-center">
+                                          <p id="">For the Month Of</p>
+                                       </div>
+                      
+                                       <div class="col-md-6 text-center">
+                                          <p>
+                                              <select name="dtrDate" id="dtrDate"  style="border: 0ch;">
+                                                  <option data-id="0" value="0">Select Date</option>
+                                                  <repeat group="{{@YearMonth}}" value="{{ @Date }}">
+                                                      <option value="{{@Date.temp_biorecord_yr}}/{{@Date.temp_biorecord_mnth}}" >{{@Date.temp_biorecord_yr}} - {{@Date.temp_biorecord_mnth}}</option>
+                                                  </repeat>
+                                              </select>
+                                          </p>
+                                       </div>
+                                  </div>
+                                </div>
+                                   
+                              
+                                                               
+                                  <table id="tblDtr" class="table table-bordered table-striped table-hover dt-responsive nowrap w-100" >
+                                      <thead>
+                                          <tr>
+                                              <th class="align-middle text-center" rowspan="2" >Day</th>
+                                              <th colspan="2" class="text-center" valign="bottom">AM</th>
+                                              <th colspan="2" class="text-center" valign="bottom">PM</th>
+                                              <th colspan="2" class="text-center" valign="bottom">UNDERTIME</th>
+                                          </tr>
+                                          <tr>
+                                            
+                                              <th class="text-center">In</th>
+                                              <th class="text-center">Out</th>
+                                              <th class="text-center">In</th>
+                                              <th class="text-center">Out</th>
+                                              <th class="text-center">Hours</th>
+                                              <th class="text-center">Minutes</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td class="text-center" id="day1">1</td>
+                                              <td class="text-center" id="AmArr_d1">-</td>
+                                              <td class="text-center" id="AmDep_d1">-</td>
+                                              <td class="text-center" id="PmArr_d1">-</td>
+                                              <td class="text-center" id="PmDep_d1">-</td>
+                                              <td class="text-center" id="d1_HUtime">-</td>
+                                              <td class="text-center" id="d1_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day2">2</td>
+                                              <td class="text-center" id="AmArr_d2">-</td>
+                                              <td class="text-center" id="AmDep_d2">-</td>
+                                              <td class="text-center" id="PmArr_d2">-</td>
+                                              <td class="text-center" id="PmDep_d2">-</td>
+                                              <td class="text-center" id="d2_HUtime">-</td>
+                                              <td class="text-center" id="d2_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day3">3</td>
+                                              <td class="text-center" id="AmArr_d3">-</td>
+                                              <td class="text-center" id="AmDep_d3">-</td>
+                                              <td class="text-center" id="PmArr_d3">-</td>
+                                              <td class="text-center" id="PmDep_d3">-</td>
+                                              <td class="text-center" id="d3_HUtime">-</td>
+                                              <td class="text-center" id="d3_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day4">4</td>
+                                              <td class="text-center" id="AmArr_d4">-</td>
+                                              <td class="text-center" id="AmDep_d4">-</td>
+                                              <td class="text-center" id="PmArr_d4">-</td>
+                                              <td class="text-center" id="PmDep_d4">-</td>
+                                              <td class="text-center" id="d4_HUtime">-</td>
+                                              <td class="text-center" id="d4_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day5">5</td>
+                                              <td class="text-center" id="AmArr_d5">-</td>
+                                              <td class="text-center" id="AmDep_d5">-</td>
+                                              <td class="text-center" id="PmArr_d5">-</td>
+                                              <td class="text-center" id="PmDep_d5">-</td>
+                                              <td class="text-center" id="d5_HUtime">-</td>
+                                              <td class="text-center" id="d5_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day6">6</td>
+                                              <td class="text-center" id="AmArr_d6">-</td>
+                                              <td class="text-center" id="AmDep_d6">-</td>
+                                              <td class="text-center" id="PmArr_d6">-</td>
+                                              <td class="text-center" id="PmDep_d6">-</td>
+                                              <td class="text-center" id="d6_HUtime">-</td>
+                                              <td class="text-center" id="d6_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day7">7</td>
+                                              <td class="text-center" id="AmArr_d7">-</td>
+                                              <td class="text-center" id="AmDep_d7">-</td>
+                                              <td class="text-center" id="PmArr_d7">-</td>
+                                              <td class="text-center" id="PmDep_d7">-</td>
+                                              <td class="text-center" id="d7_HUtime">-</td>
+                                              <td class="text-center" id="d7_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day8">8</td>
+                                              <td class="text-center" id="AmArr_d8">-</td>
+                                              <td class="text-center" id="AmDep_d8">-</td>
+                                              <td class="text-center" id="PmArr_d8">-</td>
+                                              <td class="text-center" id="PmDep_d8">-</td>
+                                              <td class="text-center" id="d8_HUtime">-</td>
+                                              <td class="text-center" id="d8_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day9">9</td>
+                                              <td class="text-center" id="AmArr_d9">-</td>
+                                              <td class="text-center" id="AmDep_d9">-</td>
+                                              <td class="text-center" id="PmArr_d9">-</td>
+                                              <td class="text-center" id="PmDep_d9">-</td>
+                                              <td class="text-center" id="d9_HUtime">-</td>
+                                              <td class="text-center" id="d9_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day10">10</td>
+                                              <td class="text-center" id="AmArr_d10">-</td>
+                                              <td class="text-center" id="AmDep_d10">-</td>
+                                              <td class="text-center" id="PmArr_d10">-</td>
+                                              <td class="text-center" id="PmDep_d10">-</td>
+                                              <td class="text-center" id="d10_HUtime">-</td>
+                                              <td class="text-center" id="d10_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day11">11</td>
+                                              <td class="text-center" id="AmArr_d11">-</td>
+                                              <td class="text-center" id="AmDep_d11">-</td>
+                                              <td class="text-center" id="PmArr_d11">-</td>
+                                              <td class="text-center" id="PmDep_d11">-</td>
+                                              <td class="text-center" id="d11_HUtime">-</td>
+                                              <td class="text-center" id="d11_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day12">12</td>
+                                              <td class="text-center" id="AmArr_d12">-</td>
+                                              <td class="text-center" id="AmDep_d12">-</td>
+                                              <td class="text-center" id="PmArr_d12">-</td>
+                                              <td class="text-center" id="PmDep_d12">-</td>
+                                              <td class="text-center" id="d12_HUtime">-</td>
+                                              <td class="text-center" id="d12_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day13">13</td>
+                                              <td class="text-center" id="AmArr_d13">-</td>
+                                              <td class="text-center" id="AmDep_d13">-</td>
+                                              <td class="text-center" id="PmArr_d13">-</td>
+                                              <td class="text-center" id="PmDep_d13">-</td>
+                                              <td class="text-center" id="d13_HUtime">-</td>
+                                              <td class="text-center" id="d13_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day14">14</td>
+                                              <td class="text-center" id="AmArr_d14">-</td>
+                                              <td class="text-center" id="AmDep_d14">-</td>
+                                              <td class="text-center" id="PmArr_d14">-</td>
+                                              <td class="text-center" id="PmDep_d14">-</td>
+                                              <td class="text-center" id="d14_HUtime">-</td>
+                                              <td class="text-center" id="d14_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day15">15</td>
+                                              <td class="text-center" id="AmArr_d15">-</td>
+                                              <td class="text-center" id="AmDep_d15">-</td>
+                                              <td class="text-center" id="PmArr_d15">-</td>
+                                              <td class="text-center" id="PmDep_d15">-</td>
+                                              <td class="text-center" id="d15_HUtime">-</td>
+                                              <td class="text-center" id="d15_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day16">16</td>
+                                              <td class="text-center" id="AmArr_d16">-</td>
+                                              <td class="text-center" id="AmDep_d16">-</td>
+                                              <td class="text-center" id="PmArr_d16">-</td>
+                                              <td class="text-center" id="PmDep_d16">-</td>
+                                              <td class="text-center" id="d16_HUtime">-</td>
+                                              <td class="text-center" id="d16_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day17">17</td>
+                                              <td class="text-center" id="AmArr_d17">-</td>
+                                              <td class="text-center" id="AmDep_d17">-</td>
+                                              <td class="text-center" id="PmArr_d17">-</td>
+                                              <td class="text-center" id="PmDep_d17">-</td>
+                                              <td class="text-center" id="d17_HUtime">-</td>
+                                              <td class="text-center" id="d17_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day18">18</td>
+                                              <td class="text-center" id="AmArr_d18">-</td>
+                                              <td class="text-center" id="AmDep_d18">-</td>
+                                              <td class="text-center" id="PmArr_d18">-</td>
+                                              <td class="text-center" id="PmDep_d18">-</td>
+                                              <td class="text-center" id="d18_HUtime">-</td>
+                                              <td class="text-center" id="d18_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day19">19</td>
+                                              <td class="text-center" id="AmArr_d19">-</td>
+                                              <td class="text-center" id="AmDep_d19">-</td>
+                                              <td class="text-center" id="PmArr_d19">-</td>
+                                              <td class="text-center" id="PmDep_d19">-</td>
+                                              <td class="text-center" id="d19_HUtime">-</td>
+                                              <td class="text-center" id="d19_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day20">20</td>
+                                              <td class="text-center" id="AmArr_d20">-</td>
+                                              <td class="text-center" id="AmDep_d20">-</td>
+                                              <td class="text-center" id="PmArr_d20">-</td>
+                                              <td class="text-center" id="PmDep_d20">-</td>
+                                              <td class="text-center" id="d20_HUtime">-</td>
+                                              <td class="text-center" id="d20_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day21">21</td>
+                                              <td class="text-center" id="AmArr_d21">-</td>
+                                              <td class="text-center" id="AmDep_d21">-</td>
+                                              <td class="text-center" id="PmArr_d21">-</td>
+                                              <td class="text-center" id="PmDep_d21">-</td>
+                                              <td class="text-center" id="d21_HUtime">-</td>
+                                              <td class="text-center" id="d21_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day22">22</td>
+                                              <td class="text-center" id="AmArr_d22">-</td>
+                                              <td class="text-center" id="AmDep_d22">-</td>
+                                              <td class="text-center" id="PmArr_d22">-</td>
+                                              <td class="text-center" id="PmDep_d22">-</td>
+                                              <td class="text-center" id="d22_HUtime">-</td>
+                                              <td class="text-center" id="d22_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day23">23</td>
+                                              <td class="text-center" id="AmArr_d23">-</td>
+                                              <td class="text-center" id="AmDep_d23">-</td>
+                                              <td class="text-center" id="PmArr_d23">-</td>
+                                              <td class="text-center" id="PmDep_d23">-</td>
+                                              <td class="text-center" id="d23_HUtime">-</td>
+                                              <td class="text-center" id="d23_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day24">24</td>
+                                              <td class="text-center" id="AmArr_d24">-</td>
+                                              <td class="text-center" id="AmDep_d24">-</td>
+                                              <td class="text-center" id="PmArr_d24">-</td>
+                                              <td class="text-center" id="PmDep_d24">-</td>
+                                              <td class="text-center" id="d24_HUtime">-</td>
+                                              <td class="text-center" id="d24_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day25">25</td>
+                                              <td class="text-center" id="AmArr_d25">-</td>
+                                              <td class="text-center" id="AmDep_d25">-</td>
+                                              <td class="text-center" id="PmArr_d25">-</td>
+                                              <td class="text-center" id="PmDep_d25">-</td>
+                                              <td class="text-center" id="d25_HUtime">-</td>
+                                              <td class="text-center" id="d25_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day26">26</td>
+                                              <td class="text-center" id="AmArr_d26">-</td>
+                                              <td class="text-center" id="AmDep_d26">-</td>
+                                              <td class="text-center" id="PmArr_d26">-</td>
+                                              <td class="text-center" id="PmDep_d26">-</td>
+                                              <td class="text-center" id="d26_HUtime">-</td>
+                                              <td class="text-center" id="d26_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day27">27</td>
+                                              <td class="text-center" id="AmArr_d27">-</td>
+                                              <td class="text-center" id="AmDep_d27">-</td>
+                                              <td class="text-center" id="PmArr_d27">-</td>
+                                              <td class="text-center" id="PmDep_d27">-</td>
+                                              <td class="text-center" id="d27_HUtime">-</td>
+                                              <td class="text-center" id="d27_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day28">28</td>
+                                              <td class="text-center" id="AmArr_d28">-</td>
+                                              <td class="text-center" id="AmDep_d28">-</td>
+                                              <td class="text-center" id="PmArr_d28">-</td>
+                                              <td class="text-center" id="PmDep_d28">-</td>
+                                              <td class="text-center" id="d28_HUtime">-</td>
+                                              <td class="text-center" id="d28_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day29">29</td>
+                                              <td class="text-center" id="AmArr_d29">-</td>
+                                              <td class="text-center" id="AmDep_d29">-</td>
+                                              <td class="text-center" id="PmArr_d29">-</td>
+                                              <td class="text-center" id="PmDep_d29">-</td>
+                                              <td class="text-center" id="d29_HUtime">-</td>
+                                              <td class="text-center" id="d29_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day30">30</td>
+                                              <td class="text-center" id="AmArr_d30">-</td>
+                                              <td class="text-center" id="AmDep_d30">-</td>
+                                              <td class="text-center" id="PmArr_d30">-</td>
+                                              <td class="text-center" id="PmDep_d30">-</td>
+                                              <td class="text-center" id="d30_HUtime">-</td>
+                                              <td class="text-center" id="d30_MUtime">-</td>
+                                          </tr>
+                  
+                                          <tr>
+                                              <td class="text-center" id="day31">31</td>
+                                              <td class="text-center" id="AmArr_d31">-</td>
+                                              <td class="text-center" id="AmDep_d31">-</td>
+                                              <td class="text-center" id="PmArr_d31">-</td>
+                                              <td class="text-center" id="PmDep_d31">-</td>
+                                              <td class="text-center" id="d31_HUtime">-</td>
+                                              <td class="text-center" id="d31_MUtime">-</td>
+                                          </tr>
+                  
+                                      </tbody>
+                                  </table>    
+                                  <div class="container">
+                                      <div class="row">  
+                  
+                                          <div class="col-md-12">
+                                              <div class="float-end">
+                                                      <p class="" aria-expanded="false">Total</p>
+                                              </div>
+                                          </div>
+                  
+                                    <div class="col-md-12">
+                                          I certify on my honor that the above is true and correct of the hours work
+                                          performed, record of which was made daily at the time of arrival and departure from the office.
+                                    </div>
+                  
+                                    <p class="text-center">____________________________</p>
+                                    <div class="col-md-12 text-center">Signature</div>
+                  
+                                    <div class="col-md-12">Verified as to the prescribe working hours.</div>
+                  
+                                    <p class="text-center">____________________________</p>
+                                    <div class="col-md-12 text-center">In Charge</div>
+                  
+                                      <p id="signby"></p>
+                                      </div>
+                                  </div>
+                              </div>
+
+          
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div> <!-- end row -->
+           
+            <!-- end col -->
+        </div>
+    </div> <!-- container-fluid -->
+</div>
+
+
+

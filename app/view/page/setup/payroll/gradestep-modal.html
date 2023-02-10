@@ -1,0 +1,134 @@
+<div id="modalGradestep" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmGradestep" id="frmGradestep" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Gradestep</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12" style="display:none;">
+                        <div class="mb-3 position-relative">
+                            <label for="rgradestep_id" class="form-label">Salarygrade ID</label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" id="rgradestep_id" name="rgradestep_id"
+                                    placeholder="Salarygrade ID" aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+
+                            <!-- <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="" class="form-label">Grade</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rgradestep_gradeno"
+                                            name="rgradestepno" placeholder="Salarygrade ID"
+                                            aria-describedby="validationTooltipUsernamePrepend" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="rgradestep_id" class="form-label">Step</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rgradestep_stepno"
+                                            name="rgradestep_stepno" placeholder="Salarygrade ID"
+                                            aria-describedby="validationTooltipUsernamePrepend" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3 position-relative">
+                                    <label for="rgradestep_id" class="form-label">Salary</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control input-mask text-start"
+                                            data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'"
+                                            id="rgradestep_salary" name="rgradestep_salary" placeholder="Salarygrade ID"
+                                            aria-describedby="validationTooltipUsernamePrepend">
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="" class="form-label">Grade</label>
+                                    <div class="input-group">
+                                        <select name="rgradestep_gradeno" id="rgradestep_gradeno"
+                                            class="form-select rgradestep_gradeno">
+                                            <option value='1'>1</option>
+                                            <option value='2'>2</option>
+                                            <option value='3'>3</option>
+                                            <option value='4'>4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="rgradestep_id" class="form-label">Step</label>
+                                    <div class="input-group">
+                                        <select name="rgradestep_stepno" id="rgradestep_stepno"
+                                            class="form-select rgradestep_stepno">
+                                            <option value='1'>1</option>
+                                            <option value='2'>2</option>
+                                            <option value='3'>3</option>
+                                            <option value='4'>4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="mb-3 position-relative">
+                                    <label for="rgradestep_salary" class="form-label">Salary</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rgradestep_salary"
+                                            name="rgradestep_salary" placeholder="Salary"
+                                            aria-describedby="validationTooltipUsernamePrepend">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="example-month-input" class="form-label">Effectivity</label>
+                                    <div class="input_group">
+                                        <input data-date-format="" data-date-min-view-mode="1" class="form-control"
+                                            type="text" id="rgradestep_effectivity" name="rgradestep_effectivity">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="rgradestep_status" class="form-label">Status</label>
+                                    <div class="input-group">
+                                        <select name="rgradestep_is_active" id="rgradestep_is_active"
+                                            class="form-select">
+                                            <option value="1">Active</option>
+                                            <option value="0">Inactive</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnGradestep">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

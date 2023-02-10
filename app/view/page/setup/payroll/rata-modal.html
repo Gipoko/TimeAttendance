@@ -1,0 +1,72 @@
+<div id="modalRata" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmRata" id="frmRata" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Rata</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                    <input type="hidden" id="rrata_id" name="rrata_id">
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="rrata_status" class="form-label">Position</label>
+                            <div class="input-group">
+                                <select name="rposition_desc" id="rposition_desc" class="form-select">
+                                    <repeat group="{{ @rposition }}" value="{{ @position }}">
+                                        <option value="{{@position.rposition_desc}}">{{@position.rposition_desc}}
+                                        </option>
+                                    </repeat>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="rrata_repallowance" class="form-label">Representation Allowance</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rrata_repallowance"
+                                    name="rrata_repallowance" placeholder="00.0" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="rrata_transallowance" class="form-label">Transportation Allowance</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rrata_transpoallowance"
+                                    name="rrata_transpoallowance" placeholder="00.0" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="rrata_status" class="form-label">Status</label>
+                            <div class="input-group">
+                                <select id="rrata_status" name="rrata_status" class="form-select">
+
+                                    <option value="ACTIVE">ACTIVE</option>
+                                    <option value="INACTIVE">INACTIVE</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnRata">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

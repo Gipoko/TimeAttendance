@@ -1,0 +1,103 @@
+<div id="modalTransferEmployee" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <form id="frmModalEmployeeTransfer" name="frmModalEmployeeTransfer" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mySmallModalLabel">Update Employee Division/Section</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        
+                        <input type="hidden" id="transferTempID" name="transferTempID" class="temp_id">
+                        <input type="hidden" id="temp_work_id" name="temp_work_id">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <h5>Current Work Details</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">Current Division Name</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="currentDivision" name="currentDivision"
+                                            readonly>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">Current Unit</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="currentDivUnit" name="currentDivUnit"
+                                            readonly>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">Current Reporting To</label>
+                                    <div class="input-group">
+                                        <select class="form-control" id="currentReportingTo" name="currentReportingTo"
+                                            readonly>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <h5>New Work Details</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">Select New Division</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="ddNewDivision" name="ddNewDivision">
+                                            <option value="">
+                                                Select New Division...</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">Select New Section</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="ddNewDivUnit" name="ddNewDivUnit" required>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">New Reporting To</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="ddNewReportingTo" name="ddNewReportingTo" required>
+                                            <option value="">Select Reporting to...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

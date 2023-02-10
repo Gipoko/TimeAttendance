@@ -1,0 +1,62 @@
+<div class="modal fade" id="modaEmployeeCert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <form id="frmEmployeeCert" name="frmEmployeeCert" method="POST">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modaEmployeeCertTitle">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <input class="form-control" type="hidden"
+                        id="temp_cert_id"
+                        name="temp_cert_id">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <label class="form-label">Professional License/Certificate Name</label>
+                        <input class="form-control" type="text"
+                        id="temp_cert_name"
+                        name="temp_cert_name"
+                        placeholder="" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <label class="form-label">Place Issued</label>
+                        <input class="form-control" type="text"
+                            id="temp_cert_place_issued"
+                            name="temp_cert_place_issued"
+                            placeholder="" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">Date Issued</label>
+                        <input class="form-control" type="text"
+                        id="temp_cert_date_issued"
+                        name="temp_cert_date_issued"
+                        placeholder="" required>
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">Expiration Date</label>
+                        <input class="form-control" type="text"
+                        id="temp_cert_date_expire"
+                        name="temp_cert_date_expire"
+                        placeholder="">
+                    </div>
+
+                </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnEmployeeCertSave">Save</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

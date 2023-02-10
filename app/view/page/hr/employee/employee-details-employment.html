@@ -1,0 +1,684 @@
+<div id="modalEmployeeUpdate" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <form name="frmHumanResourcesEmployee" id="frmHumanResourcesEmployee" method="POST" class="needs-validation"
+                novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHumanResourcesEmployeeTitle">Branch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs customtab2" role="tablist">
+                        <li class="nav-item"> <a class="nav-link active" data-bs-toggle="tab" href="#employeeProfile" role="tab"><span class="hidden-sm-up"><i class="fas fa-user"></i></span> <span class="hidden-xs-down">Details</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#employeeAddress" role="tab"><span class="hidden-sm-up"><i class="fas fa-globe"></i></span> <span class="hidden-xs-down">Address</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#employeeContactInfo" role="tab"><span class="hidden-sm-up"><i class="fas fa-phone"></i></span> <span class="hidden-xs-down">Contact</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link" data-bs-toggle="tab" href="#employeeBankDetails" role="tab"><span class="hidden-sm-up"><i class="far fa-credit-card"></i></span><span class="d-xs-none d-xs-block"> Bank</span></a> </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#employeeWorkAssigned" role="tab">
+                                <span class="d-inline d-block"><i class="fas fa-cog"></i></span>
+                                <span class="d-inline d-sm-block">Work</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#employeePayroll" role="tab">
+                                <span class="d-inline d-block"><i class="fas fa-cog"></i></span><span class="d-inline d-none d-sm-block d-xs-block">Payroll</span>
+                                
+                                
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content p-3 text-muted">
+                        <div class="tab-pane active" id="employeeProfile" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Philsys ID</label>
+                                        <div class="input-group mb-3">
+                                            <input id="philsys_id" name="philsys_id" type="text" class="form-control" placeholder="Username" aria-label="Username">
+                                                <span class="input-group-text"><i class="ti-id-badge"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Philsys Date</label>
+                                        <div class="input-group">
+                                            <input type="text" id="philsys_doi" name="philsys_doi" class="form-control mydatepicker" placeholder="yyy-mm-dd">
+                                            
+                                                <span class="input-group-text"><i class="icon-calender"></i></span>
+                                        </div>
+                                    </div> 
+                                </div>
+
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Place Issued</label>
+                                    <input type="text" id="philsys_poi" name="philsys_poi" class="form-control"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Title</label>
+                                    <select name="rtitle_id" id="rtitle_id" class="form-control form-select" style="width: 100%; height:36px;">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Firstname</label>
+                                    <input class="form-control" type="text" id="temp_first" name="temp_first"
+                                        placeholder="" required>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Middlename</label>
+                                    <input class="form-control" type="text" id="temp_mid" name="temp_mid" placeholder=""
+                                        required>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Lastname</label>
+                                    <input class="form-control" type="text" id="temp_last" name="temp_last"
+                                        placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Suffix</label>
+                                    <select class="form-select" id="rsuffix_id" name="rsuffix_id">
+                                        <repeat group="{{ @suffixes }}" value="{{ @suffix }}">
+                                            <option value="{{@suffix['rsuffix_id']}}">{{@suffix['rsuffix_id']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Blood Type</label>
+                                    <select class="form-select" id="rblood_type_id" name="rblood_type_id">
+                                        <repeat group="{{ @bloodtypes }}" value="{{ @bloodtype }}" required>
+                                            <option value="{{@bloodtype['rblood_type_id']}}">
+                                                {{@bloodtype['rblood_type_id']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Gender</label>
+                                    <select class="form-select" id="rgender_id" name="rgender_id">
+                                        <repeat group="{{ @genders }}" value="{{ @gender }}" required>
+                                            <option value="{{@gender['rgender_id']}}">{{@gender['rgender_id']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <div class="position-relative">
+                                        <label for="validationTooltipUsername" class="form-label">Birthday</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                            </div>
+                                            <input type="text" id="temp_dob" name="temp_dob" class="form-control"
+                                                placeholder="yyyy-mm-dd" data-date-format="yyyy-mm-dd"
+                                                data-date-autoclose="true" data-provide="datepicker" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Nationality</label>
+                                    <select class="form-select" id="rcountry_id" name="rcountry_id">
+                                        <repeat group="{{ @countries }}" value="{{ @country }}" required>
+                                            <option value="{{@country['rcountry_id']}}">{{@country['rcountry_name']}}
+                                            </option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Birthplace</label>
+                                    <input class="form-control" type="text" id="temp_pob" name="temp_pob" placeholder=""
+                                        required>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Indigency</label>
+                                    <select class="form-select" id="temp_isindigent" name="temp_isindigent" readonly>
+
+                                        <repeat group="{{ @indigencies }}" value="{{ @indigency }}">
+                                            <option value="{{@indigency['temp_isindigent']}}">
+                                                {{@indigency['temp_isindigent']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Marital Status</label>
+                                    <select class="form-select" id="temp_marital_id" name="temp_marital_id" required>
+                                        <repeat group="{{ @maritals }}" value="{{ @marital }}" required>
+                                            <option value="{{@marital['temp_marital_id']}}">
+                                                {{@marital['temp_marital_id']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Religion</label>
+                                    <select class="form-select" id="rreligion_id" name="rreligion_id" required>
+                                        <repeat group="{{ @religions }}" value="{{ @religion }}">
+                                            <option value="{{@religion['rreligion_id']}}">
+                                                {{@religion['rreligion_desc']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 mb-3 mt-3">
+                                    <h4 class="card-title">Government Mandatory Deduction ID</h4>
+                                    <hr>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">GSIS</label>
+                                    <input class="form-control" type="text" id="temp_gsis" name="temp_gsis"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">SSS</label>
+                                    <input class="form-control" type="text" id="temp_sss" name="temp_sss"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">BIR TIN</label>
+                                    <input class="form-control" type="text" id="temp_birtin" name="temp_birtin"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">PhilHealth</label>
+                                    <input class="form-control" type="text" id="temp_philhealth" name="temp_philhealth"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Pag-Ibig</label>
+                                    <input class="form-control" type="text" id="temp_pagibig" name="temp_pagibig"
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="employeeAddress" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Region</label>
+                                    <select id="regcode" name="regcode" class="form-control form-select" style="width: 100%; height:36px;">
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Province</label>
+                                    <select class="form-select" id="provcode" name="provcode" required>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">City/Town</label>
+                                    <select class="form-select" id="citymuncode" name="citymuncode" required>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Barangay</label>
+                                    <select class="form-select" id="brgycode" name="brgycode" required>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+
+                                    <label class="form-label">Barangay Zone</label>
+                                    <input type="text" id="temp_zone" name="temp_zone" class="form-control"
+                                        placeholder="" required>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+
+                                    <label class="form-label">Street Name</label>
+                                    <input type="text" class="form-control" id="temp_street" name="temp_street"
+                                        class="form-control" placeholder="" required>
+
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">House/Building/Room Number</label>
+                                    <input type="text" class="form-control" id="temp_building_nameno"
+                                        name="temp_building_nameno" class="form-control" placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">PO Box</label>
+                                    <input class="form-control" type="text" id="temp_pobox" name="temp_pobox"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Zip Code</label>
+                                    <input class="form-control" type="text" id="temp_zipcode" name="temp_zipcode"
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="employeeContactInfo" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Landline</label>
+                                    <input class="form-control" type="text" id="temp_landline" name="temp_landline"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Mobile</label>
+                                    <input class="form-control" type="text" id="temp_mobile" name="temp_mobile"
+                                        placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Personal Email</label>
+                                    <input class="form-control" type="text" id="temp_email" name="temp_email"
+                                        placeholder="" required>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <div>
+                                        <label class="form-label">Facebook</label>
+                                        <input class="form-control" type="text" id="temp_fb" name="temp_fb"
+                                            placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Whatsapp</label>
+                                    <input class="form-control" type="text" id="temp_whatsapp" name="temp_whatsapp"
+                                        placeholder="">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Viber</label>
+                                    <input class="form-control" type="text" id="temp_viber" name="temp_viber"
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="employeeBankDetails" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Bank Name</label>
+                                    <select class="form-select" id="rbank_id" name="rbank_id">
+                                        <repeat group="{{ @banks }}" value="{{ @bank }}">
+                                            <option value="{{@bank['rbank_id']}}">
+                                                {{@bank['rbank_name']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Bank Address</label>
+                                    <input class="form-control" type="text" id="temp_bank_address"
+                                        name="temp_bank_address">
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Bank Account</label>
+                                    <input class="form-control" type="text" id="temp_bank_accountno"
+                                        name="temp_bank_accountno">
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">ATM Card Date Expire</label>
+                                    <input class="form-control" type="text" id="temp_bank_atmexpire"
+                                        name="temp_bank_atmexpire" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="employeeWorkAssigned" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Agency</label>
+                                    <select class="form-select" id="ragency_id" name="ragency_id">
+                                        <repeat group="{{ @agencies }}" value="{{ @agency }}">
+                                            <option value="{{@agency['ragency_id']}}">
+                                                {{@agency['ragency_name']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Division</label>
+                                    <select class="form-select" id="rdivision_id" name="rdivision_id" required>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Section</label>
+                                    <select class="form-select" id="rdivision_sectionunit_id"
+                                        name="rdivision_sectionunit_id" required>
+                                        <repeat group="{{ @divsects }}" value="{{ @divsect }}">
+                                            <option value="{{@divsect['rdivision_sectionunit_id']}}">
+                                                {{@divsect['rdivision_sectionunit_name']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <div class="position-relative">
+                                        <label for="validationTooltipUsername" class="form-label">Date Joined</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+
+                                            </div>
+                                            <input type="text" id="temp_datejoined" name="temp_datejoined"
+                                                class="form-control" placeholder="yyyy-mm-dd"
+                                                data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                                data-provide="datepicker" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Biometric ID</label>
+                                    <input class="form-control" type="text" id="temp_biometric_id"
+                                        name="temp_biometric_id" required>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Employee File No</label>
+                                    <input class="form-control" type="text" id="temp_efn" name="temp_efn" placeholder=""
+                                        required>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Reporting To</label>
+                                    <select class="form-select" id="temp_work_reporting_to_id"
+                                        name="temp_work_reporting_to_id" required>
+                                        <repeat group="{{ @reportingtos }}" value="{{ @reportingto }}">
+                                            <option value="{{@reportingto['temp_id']}}">
+                                                {{@reportingto['fullName']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane" id="employeePayroll" role="tabpanel">
+
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Position</label>
+                                    <select class="form-select" id="rposition_id" name="rposition_id" required>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Employment Type</label>
+                                    <select class="form-select" id="remployment_type_id" name="remployment_type_id"
+                                        required>
+                                        <repeat group="{{ @emptypes }}" value="{{ @emptype }}">
+                                            <option value="{{@emptype['remployment_type_id']}}">
+                                                {{@emptype['remployment_type_desc']}}</option>
+                                        </repeat>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Salary Grade</label>
+                                    <input class="form-control" type="text" id="rgradestep_gradeno"
+                                        name="rgradestep_gradeno" readonly>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Salary Step</label>
+                                    <input class="form-control" type="text" id="rgradestep_stepno"
+                                        name="rgradestep_stepno" readonly>
+                                </div>
+                                <div class="col-lg-4 mb-3">
+                                    <label class="form-label">Salary</label>
+                                    <input class="form-control" type="number" id="rgradestep_salary"
+                                        name="rgradestep_salary" align="right">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Tax Percentage</label>
+                                    <input class="form-control" type="text" id="tax_percent" name="tax_percent"
+                                        readonly>
+
+                                </div>
+                                <div class="col-lg-6 mb-3">
+                                    <label class="form-label">Additional Tax</label>
+                                    <input class="form-control" type="text" id="tax_additional" name="tax_additional"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button fw-medium collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="false" aria-controls="collapseOne">
+                                                Gross Earnings
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="text-muted">
+                                                    <div class="col-lg-12 col-xl-12">
+                                                        <h6 class="font-size-15 mt-1">Other Earnings</h6>
+                                                        <table id="tblOtherEarningsSelection"
+                                                            class="table table-bordered table-striped dt-responsive nowrap w-100">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>ID</th>
+                                                                    <th>Code</th>
+                                                                    <th>Default Amt</th>
+                                                                    <th>Mandatory</th>
+                                                                    <th>Taxable</th>
+                                                                    <th>Printable</th>
+                                                                    <th>Frequency</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tfoot align="right">
+                                                                <tr>
+                                                                    <th colspan="2"></th>
+                                                                    <th id="idTotalEarnings"></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button fw-medium collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                Regular Deductions
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="text-muted">
+                                                    <div class="col-lg-12 col-xl-12">
+                                                        <set famMember="parent" />
+                                                        <h6 class="font-size-15 mt-1">Deductions</h6>
+                                                        <table id="tblRegularDeduction"
+                                                            class="table table-bordered table-hover table-striped dt-responsive nowrap w-100">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>ID</th>
+                                                                    <th>Desc</th>
+                                                                    <th>Default Amt</th>
+                                                                    <th>% Deduction</th>
+                                                                    <th>Add'l Deduction</th>
+                                                                    <th>Mandatory</th>
+                                                                    <th>Taxable</th>
+                                                                    <th>Printable</th>
+                                                                    <th>Fixed</th>
+                                                                    <th>Group</th>
+                                                                    <th>Other Desc</th>
+                                                                    <th>Code</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tfoot align="right">
+                                                                <tr>
+                                                                    <th colspan="2"></th>
+                                                                    <th id="idTotalRegularDeductions"></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                        {{@famMember}}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button fw-medium collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                Other Deductions
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="text-muted">
+                                                    <div class="col-lg-12 col-xl-12">
+                                                        <set famMember="parent" />
+                                                        <h6 class="font-size-15 mt-1">Other Deductions</h6>
+                                                        <table id="tblOtherDeductions"
+                                                            class="table table-bordered table-hover table-striped dt-responsive nowrap w-100">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>ID</th>
+                                                                    <th>Code</th>
+                                                                    <th>Default Amt</th>
+                                                                    <th>% Deduction</th>
+                                                                    <th>Additional Deduction</th>
+                                                                    <th>Mandatory</th>
+                                                                    <th>Taxable</th>
+                                                                    <th>Printable</th>
+                                                                    <th>Fixed</th>
+                                                                    <th>Group</th>
+                                                                    <th>Other Desc</th>
+                                                                    <th>Code</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tfoot align="right">
+                                                                <tr>
+                                                                    <th colspan="2"></th>
+                                                                    <th id="idTotalOtherDeductions"></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                        {{@famMember}}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-12">
+                                    <h5>Summary</h5>
+                                    <div class="table-responsive">
+                                        <table
+                                            class="table table-responsive table-striped table-bordered clsTableSummary">
+                                            <tr>
+                                                <td>
+                                                    Total Earnings
+                                                </td>
+                                                <td>
+                                                    Total Regular Deductions
+                                                </td>
+                                                <td>
+                                                    Total Other Deductions
+                                                </td>
+                                                <td>
+                                                    Grand Total Deductions
+                                                </td>
+                                                <td>
+                                                    Net Income
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td id="idSumTotalGrossEarnings">
+
+                                                </td>
+                                                <td id="idSumTotalRegularDeductions">
+
+                                                </td>
+                                                <td id="idSumTotalOtherDeductions">
+
+                                                </td>
+                                                <td id="idSumTotalGrandDeductions">
+
+                                                </td>
+                                                <td id="idSumTotalNetIncome">
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnEmployee">Save</button>
+                </div>
+            </form>
+            <button type="button" id="saveMe">save me</button>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

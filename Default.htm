@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+        table
+        {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        table th
+        {
+            background-color: #F7F7F7;
+            color: #333;
+            font-weight: bold;
+        }
+        table th, table td
+        {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="fileUpload" />
+    <input type="button" id="upload" value="Upload" onclick="Upload()" />
+    <hr />
+    <table id="tblDate" border="1" cellpadding="1" cellspacing="1" style="width:100%">
+        <thead>
+            <tr>
+                <td scope="col">sn</th>
+                <td scope="col">name</th>
+            </tr>
+        </thead>
+    </table>
+    <div id="dvExcel">
+    </div>
+    <script type="text/javascript" src="public/skote/assets/libs/xlsxjs/0.17.4/xlsx.min.js"></script>
+    <script type="text/javascript" src="public/skote/assets/libs/xlsxjs/0.17.4/jszip.min.js"></script>
+    <script type="text/javascript">
+        function Upload() {
+            Date.prototype.addDays = function(days) {
+            this.setDate(this.getDate() + parseInt(days));
+            return this;
+            };
+
+            // and then call
+
+            var newDate = new Date().addDays(2); //+2 days
+            console.log(newDate);
+            alert('x');
+            var  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var d = new Date();
+            var monthName=months[d.getMonth()];
+
+
+            var table = document.getElementById("tblDate");
+            $cell = table.rows[0].cells;
+            console.log($cell);
+            var dt = new Date();
+
+            // dt.getMonth() will return a month between 0 - 11
+            // we add one to get to the last day of the month 
+            // so that when getDate() is called it will return the last day of the month
+            var month = dt.getMonth() + 1;
+            var year = dt.getFullYear();
+
+            // this line does the magic (in collab with the lines above)
+            var daysInMonth = new Date(year, month, 0).getDate();
+            let weekday = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            var options = { weekday: 'short', day: 'numeric' };
+          
+            
+            for (i=0;i<daysInMonth;i++) {
+                addColumnToTableJS('tblDate', null, '<td>{ROWINDEX}{COLINDEX}</td>')
+                var newDate = new Date(year +'-'+ month + '-' + (i+1)); //+2 days
+                $v = newDate.toLocaleDateString("en-US", options);
+                console.log('newDate', $v);
+
+                //$cell[parseInt(i+2,10)].innerHTML=monthName + ' ' + (i+1);
+                $cell[parseInt(i+2,10)].innerHTML=$v;
+                $cell[parseInt(i+2,10)].classList.add('class-1');
+            }
+
+            addRowToTableJS('tblDate');
+            //Reference the FileUpload element.
+            var fileUpload = document.getElementById("fileUpload");
+
+            //Validate whether File is valid Excel file.
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.xls|.xlsx)$/;
+            if (regex.test(fileUpload.value.toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+
+                    //For Browsers other than IE.
+                    if (reader.readAsBinaryString) {
+                        reader.onload = function (e) {
+                            ProcessExcel(e.target.result);
+
+                        };
+                        reader.readAsBinaryString(fileUpload.files[0]);
+                    }
+                } else {
+                    alert("This browser does not support HTML5.");
+                }
+            } else {
+                alert("Please upload a valid Excel file.");
+            }
+        };
+
+        function ProcessExcel(data) {
+            //Read the Excel File data.
+            var workbook = XLSX.read(data, {
+                type: 'binary'
+            });
+            //console.log(workbook);
+
+            //Fetch the name of First Sheet.
+            var firstSheet = workbook.SheetNames[0];
+
+            //Read all rows from First Sheet into an JSON array.
+            var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
+
+            //Create a HTML Table element.
+
+            //console.log($s,$ar.emp_2, $ar['Attend. Logs']);
+            for (let [key, value] of Object.entries($ar)) {
+                console.log(key, value);
+            }
+            //Add the data rows from Excel file.
+            for (var i = 0; i < excelRows.length; i++) {
+
+            }
+
+
+    
+        };
+
+        function addColumnToTableJS(table, pos, content){
+            if (typeof table === 'string'){
+                table = document.getElementById(table);
+            }
+            var columns = table.rows[0].getElementsByTagName('td').length;
+            if (!pos && pos !== 0){
+                pos = columns;
+            }
+
+            for (var r=0; r<table.rows.length; r++){
+                var cell = table.rows[r].insertCell(pos);
+                cell.innerHTML = 'jun'
+            }
+        }
+
+
+        function addRowToTableJS(table, pos){
+            if (typeof table === 'string'){
+                table = document.getElementById(table);
+            }
+            console.debug(table);
+            var rows = table.rows.length;
+            var tr = table.rows[0];
+            var columns = tr ? tr.getElementsByTagName('td').length : 1;
+            var colsHtml = '';
+            for (var i=0; i<columns; i++){
+                var row = String.fromCharCode(65 + rows);
+                colsHtml += '<td>' + row + i +'</td>';
+            }
+            var newTr = table.insertRow(pos);
+            newTr.innerHTML = colsHtml;
+        }
+    </script>
+</body>
+</html> 

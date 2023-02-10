@@ -1,0 +1,92 @@
+<div id="modalPayrollPeriod" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmPayrollPeriod" id="frmPayrollPeriod" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Payroll Period</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container">
+                        <div class="row">
+
+
+                            <input type="hidden" class="form-control" id="rpayroll_period_id" name="rpayroll_period_id">
+
+
+                            <div class="col-md-12 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="example-month-input" class="form-label">Payroll Period</label>
+                                    <div class="input_group">
+                                        <input data-date-format="" data-date-min-view-mode="1" class="form-control"
+                                            type="text" id="rpayroll_period" name="rpayroll_period">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpayroll_identification" class="form-label">Period
+                                        Identification</label>
+                                    <div class="input-group">
+                                        <select id="rpayroll_identification" name="rpayroll_identification"
+                                            class="form-select">
+
+                                            <option value="Whole_Period">Whole Period</option>
+                                            <option value="First_Period">First Period</option>
+                                            <option value="Second_Period">Second Period</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="" class="form-label">From</label>
+                                    <div class="input_group">
+                                        <input type="text" class="form-control" id="rpayroll_start_date"
+                                            name="rpayroll_start_date" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="" class="form-label">To</label>
+                                    <div class="input_group">
+                                        <input type="text" class="form-control" id="rpayroll_end_date"
+                                            name="rpayroll_end_date" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="rpayroll_status" class="form-label">Status</label>
+                                    <div class="input-group">
+                                        <select id="rpayroll_status" name="rpayroll_status" class="form-select">
+
+                                            <option value="ACTIVE">ACTIVE</option>
+                                            <option value="INACTIVE">INACTIVE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnPayrollPeriod">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

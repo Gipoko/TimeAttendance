@@ -1,0 +1,6 @@
+cau.php			- authenticated user controller
+base.php		- base controller
+con.php 		- connection to database
+chr.php			- controller for human resources
+csec.php		- controller to manage recaptcha, random characters
+fpc.php

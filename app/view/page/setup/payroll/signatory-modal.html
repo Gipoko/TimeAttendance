@@ -1,0 +1,52 @@
+<div id="modalSignatory" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmSignatory" id="frmSignatory" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Signatory</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12" style="display:none;">
+                        <div class="mb-3 position-relative">
+                            <label for="rsignatory_id" class="form-label">Signatory ID</label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" id="rsignatory_id" name="rsignatory_id"
+                                    placeholder="Signatory ID" aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3 position-relative">
+                            <label for="rsignatory_code" class="form-label">Signatory</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rsignatory" name="rsignatory"
+                                    placeholder="Signatory Code" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="rsignatory_desc" class="form-label">Employee ID</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rsignatory_employee_id"
+                                    name="rsignatory_employee_id" placeholder="Employee ID"
+                                    aria-describedby="validationTooltipUsernamePrepend" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnSignatory">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

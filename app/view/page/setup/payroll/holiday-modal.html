@@ -1,0 +1,73 @@
+<div id="modalHoliday" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmHoliday" id="frmHoliday" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Holiday</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12" style="display:none;">
+                        <div class="mb-3 position-relative">
+                            <label for="rholiday_id" class="form-label"></label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" id="rholiday_id" name="rholiday_id"
+                                    placeholder="Earning ID" aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 ">
+                        <div class="mb-3 position-relative">
+                            <label for="holiday_code" class="form-label">Code</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rholiday_code" name="rholiday_code"
+                                    placeholder="Holiday Code" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="holiday_desc" class="form-label">Description</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rholiday_desc" name="rholiday_desc"
+                                    placeholder="Holiday Description"
+                                    aria-describedby="validationTooltipUsernamePrepend" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="holiday_desc" class="form-label">Date</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control" id="rholiday_date" name="rholiday_date"
+                                    placeholder="" aria-describedby="validationTooltipUsernamePrepend" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="holiday_desc" class="form-label">Status</label>
+                            <div class="input-group">
+                                <select name="rholiday_status" id="rholiday_status" class="form-select">
+                                    <option value="ACTIVE">ACTIVE</option>
+                                    <option value="INACTIVE">INACTIVE</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnHoliday">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

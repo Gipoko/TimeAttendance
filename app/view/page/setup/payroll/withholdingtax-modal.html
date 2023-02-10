@@ -1,0 +1,118 @@
+<div id="modalWithholdingtax" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmWithholdingtax" id="frmWithholdingtax" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Withholdingtax</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <input type="hidden" id="rwithtax_id" name="rwithtax_id">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mt-4">
+                            <div class="mb-3 position-relative">
+                                <label for="" class="form-label">Pay Basis</label>
+                                <div class="input-group">
+                                  <select id="rwithtax_paybasis" name="rwithtax_paybasis" class="form-select">
+                                        <option value="Semi-Monthly">Semi-Monthly</option>
+                                            <option value="Monthly">Monthly</option>
+                                        </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mt-4">
+                            <div class="mb-3 position-relative">
+                                <label for="example-month-input" class="form-label">Compensation Level From
+                                    <span class="text-danger">(₱)</span></label>
+                                <div class="input_group">
+                                    <input id="rwithtax_compensation_level_from" name="rwithtax_compensation_level_from"
+                                        placeholder="From" class="form-control input-mask text-start"
+                                        data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="mb-3 position-relative">
+                                <label for="rwithtax_address" class="form-label">Compensation Level To
+                                    <span class="text-danger">(₱)</span></label>
+                                <div class="input-group">
+                                    <input type="text" id="rwithtax_compensation_level_to"
+                                        name="rwithtax_compensation_level_to" placeholder="To"
+                                        class="form-control input-mask text-start"
+                                        data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="mb-3 position-relative">
+                                <label for="" class="form-label">Tax Percentage<span
+                                        class="text-danger">(%)</span></label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="rwithtax_percentage"
+                                        name="rwithtax_percentage" placeholder="Tax Percentage"
+                                        aria-describedby="validationTooltipUsernamePrepend" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="mb-3 position-relative">
+                                <label for="rwithtax_address" class="form-label">Tax Additional <span
+                                        class="text-danger">(₱)</span></label>
+                                <div class="input-group">
+                                    <input type="text" id="rwithtax_additional" name="rwithtax_additional"
+                                        placeholder="Additional tax" class="form-control input-mask text-start"
+                                        data-inputmask="'alias': 'numeric', 'groupSeparator': ',', 'digits': 2, 'digitsOptional': false, 'prefix': '', 'placeholder': '0'"
+                                        required>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <div class="mb-3 position-relative">
+                                <label for="rwithtax_status" class="form-label">Status</label>
+                                <div class="input-group">
+                                    <select id="rwithtax_status" name="rwithtax_status" class="form-select">
+
+                                        <option value="ACTIVE">ACTIVE</option>
+                                        <option value="INACTIVE">INACTIVE</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="mb-3 position-relative">
+                                <label for="" class="form-label">Effective Date From
+                                </label>
+                                <div class="input_group">
+                                    <input type="text" id="rwithtax_effective_from" name="rwithtax_effective_from" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="mb-3 position-relative">
+                                <label for="" class="form-label">Effective Date To
+                                </label>
+                                <div class="input_group">
+                                    <input type="text" id="rwithtax_effective_to" name="rwithtax_effective_to" class="form-control"required>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary waves-effect"
+                            data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary waves-effect waves-light"
+                            id="btnWithholdingtax">Save</button>
+                    </div>
+                    </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>

@@ -1,0 +1,105 @@
+<div id="modalPosition" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <form name="frmPosition" id="frmPosition" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Position</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <input type="hidden" class="form-control" id="rposition_id" name="rposition_id">
+
+                            <div class="col-md-12">
+                                <div class="mb-3 position-relative">
+                                    <label for="position_code" class="form-label">Position Code</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rposition_code"
+                                            name="rposition_code" placeholder="Position Code"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="mb-3 position-relative">
+                                    <label for="position_code" class="form-label">Position Description</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rposition_desc"
+                                            name="rposition_desc" placeholder="Position Description"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="position_desc" class="form-label">Position Name</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="rposition_name"
+                                            name="rposition_name" placeholder="Position Name"
+                                            aria-describedby="validationTooltipUsernamePrepend" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="" class="form-label">Grade NO.</label>
+                                    <div class="input-group">
+                                        <select name="rgradestep_gradeno" id="rgradestep_gradeno"
+                                            class="form-select rgradestep_gradeno">
+                                            <option value='1'>1</option>
+                                            <option value='2'>2</option>
+                                            <option value='3'>3</option>
+                                            <option value='4'>4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3 position-relative">
+                                    <label for="" class="form-label">Grade Step</label>
+                                    <div class="input-group">
+                                        <select name="rgradestep_stepno" id="rgradestep_stepno"
+                                            class="form-select rgradestep_stepno">
+                                            <option value='1'>1</option>
+                                            <option value='2'>2</option>
+                                            <option value='3'>3</option>
+                                            <option value='4'>4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <div class="mb-3 position-relative">
+                                    <label for="" class="form-label">Status</label>
+                                    <div class="input-group">
+                                        <select name="rposition_is_active" id="rposition_is_active"
+                                            class="form-select rposition_is_active">
+                                            <option value='1'>Active</option>
+                                            <option value='2'>Inactive</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light"
+                        id="btnPosition">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

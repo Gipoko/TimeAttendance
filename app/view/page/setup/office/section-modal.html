@@ -1,0 +1,50 @@
+<div id="modalSection" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form name="frmSection" id="frmSection" method="POST" class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Section</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12" style="display:none;">
+                        <div class="mb-3 position-relative">
+                            <label for="section_id" class="form-label">Earning ID</label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" id="rsection_id" name="rsection_id"
+                                    placeholder="Earning ID" aria-describedby="validationTooltipUsernamePrepend">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3 position-relative">
+                            <label for="section_code" class="form-label">Section Code</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rsection_code" name="rsection_code"
+                                    placeholder="Section Code" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <div class="mb-3 position-relative">
+                            <label for="section_desc" class="form-label">Section Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="rsection_name" name="rsection_name"
+                                    placeholder="Section Name" aria-describedby="validationTooltipUsernamePrepend"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light" id="btnSection">Save</button>
+                </div>
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,61 @@
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Human Resources</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="float-end">
+                            <a href="#" id="btnNewEmployee" aria-expanded="false">
+                                <i class="fas fa-user-plus m-0 text-muted h5"></i>
+                            </a>
+
+                        </div> <!-- end dropdown -->
+
+                        <h4 class="card-title mb-4">Employee List</h4>
+                        <div id="task-1">
+                            <div id="upcoming-task" class="pb-1 task-list">
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <table id="tblEmployee"
+                                            class="table table-bordered table-striped table-hover dt-responsive nowrap w-100"
+                                            style="width:100% !important;">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>FullName</th>
+                                                    <th>Other Info</th>
+                                                    <th>Address</th>
+                                                    <th>Employment Type</th>
+                                                    <th>Division Details</th>
+                                                    <th>Printable</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div> <!-- end col -->
+                                </div> <!-- end row -->
+                                <!-- end task card -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+    </div> <!-- container-fluid -->
+</div>
+
+<include href="page/hr/employee/employee-payroll.html">
+<include href="page/hr/employee/employee-details-update.html">
+<include href="page/hr/employee/employee-transfer.html">
+<include href="page/hr/employee/employee-employment-type.html">
+<include href="page/hr/employee/employee-position.html">

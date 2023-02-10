@@ -1,0 +1,441 @@
+<div id="modalEmployeePayroll" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-Deduction" id="mySmallModalLabel">Set Employee Payroll</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <input type="hidden" id="EmployeePositionTempID" name="EmployeePositionTempID">
+                    <input type="hidden" id="EmployeePositionTempWorkID" name="EmployeePositionTempWorkID">
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">Division</label>
+                        <div class="input-group">
+                            <input id="payrollCurrentDivision" name="payrollCurrentDivision" class="form-control"
+                                disabled>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">Unit</label>
+                        <div class="input-group">
+                            <input id="payrollCurrentDivUnit" name="payrollCurrentDivUnit" class="form-control"
+                                disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">Curent Job Position</label>
+                        <div class="input-group">
+                            <input id="payrollCurrentJobPosition" name="payrollCurrentJobPosition" class="form-control"
+                                disabled>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">Employment Type</label>
+                        <div class="input-group">
+                            <input id="payrollCurrentEmploymentType" name="payrollCurrentJobPosition"
+                                class="form-control" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-3">
+                        <label class="form-label">Current Grade</label>
+                        <div class="input-group">
+                            <input id="payrollCurrentGrade" name="payrollCurrentGrade" class="form-control" disabled>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <label class="form-label">Curent Step No</label>
+                        <div class="input-group">
+                            <input id="payrollCurrentStep" name="payrollCurrentStep" class="form-control" disabled>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3">
+                        <label class="form-label">Current Salary</label>
+                        <div class="input-group">
+                            <input id="payrollCurrentSalary" name="payrollCurrentSalary" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#home1" role="tab">
+                                <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                <span class="d-none d-sm-block">Earnings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#profile1" role="tab">
+                                <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                <span class="d-none d-sm-block">Allowances</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tabDeductions" role="tab">
+                                <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                                <span class="d-none d-sm-block">Deductions</span>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#settings1" role="tab">
+                                <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                                <span class="d-none d-sm-block">Settings</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <!-- EARNNING -->
+                    <!-- Tab panes -->
+                    <div class="tab-content p-3 text-muted">
+                        <div class="tab-pane active" id="home1" role="tabpanel">
+                            <div class="row">
+                                <form id="frmEarning" name="frmEarning" method="POST"></form>
+
+                                <input type="hidden" class="temp_id" name="temp_id">
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Code</label>
+                                    <div class="input-group">
+                                        <select name="rearning_code" id="rearning_code" class="form-select">
+                                            <repeat group="{{ @rpr_earning }}" value="{{ @earning }}">
+                                                <option value="{{@earning.rpr_earning_code}}">
+                                                    {{@earning.rpr_earning_code}}
+                                                </option>
+                                            </repeat>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Default Amount</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rearning_default_amt"
+                                            name="rearning_default_amt" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Tax %</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rearning_percentage_tax"
+                                            name="rearning_percentage_tax" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" style="width: 30px; height:30px;" id="rearning_taxtotal"
+                                    name="rearning_taxtotal">
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Additional</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rearning_additional"
+                                            name="rearning_additional" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" style="width: 30px; height:30px;" id="rearning_addtotal"
+                                    name="rearning_addtotal">
+
+                                <div class="col-lg-5 mb-3">
+                                    <label class="form-label">Start Date</label>
+                                    <div class="input-group" id="datepicker1">
+                                        <input type="text" class="form-control" placeholder="yyyy-mm-dd"
+                                            data-date-format="yyyy-mm-dd" data-provide="datepicker"
+                                            name="rearning_start_date" id="rearning_start_date">
+
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 mb-3">
+                                    <label class="form-label">End Date</label>
+                                    <div class="input-group" id="datepicker1">
+                                        <input type="text" class="form-control" placeholder="yyyy-mm-dd"
+                                            data-date-format="yyyy-mm-dd" data-provide="datepicker"
+                                            name="rearning_end_date" id="rearning_end_date">
+
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-2 mb-3">
+                                    <label class="form-label">Action</label>
+                                    <div class="text-center">
+                                        <button type="submit" id="btnEarningAdd" class="btn btn-secondary">Add</button>
+                                    </div>
+                                </div>
+
+                                </form>
+
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-12">
+                                    <table id="tblEarning"
+                                        class="table table-bordered table-striped table-hover dt-responsive nowrap w-100"
+                                        style="width:100%">
+                                        <thead>
+
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th>Action</th>
+
+                                            </tr>
+                                        </thead>
+
+                                    </table>
+
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                            <!-- end task card -->
+                        </div>
+                        <!-- Allowances -->
+                        <div class="tab-pane" id="profile1" role="tabpanel">
+                            <div class="row">
+                                <form id="frmAllowance" name="frmAllowance" method="POST"></form>
+
+                                <input type="hidden" class="temp_id" name="temp_id">
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Code</label>
+                                    <div class="input-group">
+                                        <select name="rallowance_code" id="rallowance_code" class="form-select">
+                                            <repeat group="{{ @rpr_allowance }}" value="{{ @allowance }}">
+                                                <option value="{{@allowance.rpr_allowance_code}}">
+                                                    {{@allowance.rpr_allowance_code}}
+                                                </option>
+                                            </repeat>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Default Amount</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rallowance_default_amt"
+                                            name="rallowance_default_amt" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Tax %</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rallowance_percentage_tax"
+                                            name="rallowance_percentage_tax" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" style="width: 30px;" id="rallowance_taxtotal"
+                                    name="rallowance_taxtotal">
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Additional</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rallowance_additional"
+                                            name="rallowance_additional" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" style="width: 30px;" id="rallowance_addtotal"
+                                    name="rallowance_addtotal">
+
+                                <div class="col-lg-5 mb-3">
+                                    <label class="form-label">Start Date</label>
+                                    <div class="input-group" id="datepicker1">
+                                        <input type="text" class="form-control" placeholder="yyyy-mm-dd"
+                                            data-date-format="yyyy-mm-dd" data-provide="datepicker"
+                                            name="rallowance_start_date" id="rallowance_start_date">
+
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 mb-3">
+                                    <label class="form-label">End Date</label>
+                                    <div class="input-group" id="datepicker1">
+                                        <input type="text" class="form-control" placeholder="yyyy-mm-dd"
+                                            data-date-format="yyyy-mm-dd" data-provide="datepicker"
+                                            name="rallowance_end_date" id="rallowance_end_date">
+
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg mb-3">
+                                    <label class="form-label">Action</label>
+                                    <div class="text-center">
+                                        <button type="submit" id="btnAllowanceAdd"
+                                            class="btn btn-secondary">Add</button>
+                                    </div>
+                                </div>
+
+                                </form>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-12">
+                                    <table id="tblAllowance"
+                                        class="table table-bordered table-striped table-hover dt-responsive nowrap w-100"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th>Action</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                            <!-- end task card -->
+                        </div>
+                        <!-- Deduction -->
+                        <div class="tab-pane" id="tabDeductions" role="tabpanel">
+                            <div class="row">
+
+                                <form id="frmDeduction" name="frmDeduction" method="POST"></form>
+
+                                <input type="hidden" class="temp_id" name="temp_id">
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Code</label>
+                                    <div class="input-group">
+                                        <select name="rdeduction_code" id="rdeduction_code" class="form-select">
+                                            <repeat group="{{ @rpr_deduction }}" value="{{ @deduction }}">
+                                                <option value="{{@deduction.rpr_deduction_code}}">
+                                                    {{@deduction.rpr_deduction_code}}
+                                                </option>
+                                            </repeat>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Default Amount</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rdeduction_default_amt"
+                                            name="rdeduction_default_amt" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Tax</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rdeduction_percentage_tax"
+                                            name="rdeduction_percentage_tax" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" style="width: 30px;" id="rdeduction_taxtotal"
+                                    name="rdeduction_taxtotal">
+
+                                <div class="col-lg-3 mb-3">
+                                    <label class="form-label">Additional</label>
+                                    <div class="input-group">
+                                        <input class="form-control me-auto" type="text" id="rdeduction_additional"
+                                            name="rdeduction_additional" value="0.00" aria-label="" required>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" style="width: 30px;" id="rdeduction_addtotal"
+                                    name="rdeduction_addtotal">
+
+                                <div class="col-lg-5 mb-3">
+                                    <label class="form-label">Start Date</label>
+                                    <div class="input-group" id="datepicker1">
+                                        <input type="text" class="form-control" placeholder="yyyy-mm-dd"
+                                            data-date-format="yyyy-mm-dd" data-provide="datepicker"
+                                            name="rdeduction_start_date" id="rdeduction_start_date">
+
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5 mb-3">
+                                    <label class="form-label">End Date</label>
+                                    <div class="input-group" id="datepicker1">
+                                        <input type="text" class="form-control" placeholder="yyyy-mm-dd"
+                                            data-date-format="yyyy-mm-dd" data-provide="datepicker"
+                                            name="rdeduction_end_date" id="rdeduction_end_date">
+
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-2 mb-3">
+                                    <label class="form-label">Action</label>
+                                    <div class="text-center">
+                                        <button type="submit" id="btnDeductionAdd"
+                                            class="btn btn-secondary">Add</button>
+                                    </div>
+                                </div>
+
+                                </form>
+
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-12">
+                                    <table id="tblDeduction"
+                                        class="table table-bordered table-striped table-hover dt-responsive nowrap w-100"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th>Action</th>
+
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                            <!-- end task card -->
+                        </div>
+
+                        <!-- <div class="tab-pane" id="settings1" role="tabpanel">
+                            <h1>ddd</h1>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,137 @@
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Payroll Settings</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Manage Payroll Settings</h4>
+                        <form id="payrollsettings" name="payrollsettings" class="ajx">
+                            <input type="hidden" name="rpaysettings_id" id="rpaysettings_id"
+                                value="{{@POST.rpaysettings_id}}">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h4 class="text-info">Pagibig</h4>
+                                    <label for="formrow-firstname-input" class="form-label">Employee</label>
+                                    <input type="text" class="form-control" id="rpaysettings_pagibig_employee"
+                                        name="rpaysettings_pagibig_employee"
+                                        value="{{@POST.rpaysettings_pagibig_employee}}">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h4 class="text-info">Payroll</h4>
+                                    <div class="mb-3">
+                                        <label for="formrow-email-input" class="form-label">Minimum Take Home Pay <span
+                                                class="text-danger">(₱)</span> </label>
+                                        <input type="text" class="form-control" id="rpaysettings_min_takehomepay"
+                                            name="rpaysettings_min_takehomepay"
+                                            value="{{@POST.rpaysettings_min_takehomepay}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <h4 class="text-info">Employer</h4>
+                                        <label for="formrow-email-input" class="form-label">Employer </label>
+                                        <input type="text" class="form-control" id="rpaysettings_pagibig_employer"
+                                            name="rpaysettings_pagibig_employer"
+                                            value="{{@POST.rpaysettings_pagibig_employer}}">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="mt-4">
+                                        <h5 class="font-size-14 mb-4">Over Time</h5>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="rpaysettings_overtime"
+                                                id="rpaysettings_overtime" checked>
+                                            <label class="form-check-label" for="formRadios1">
+                                                Standard OT rate
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rpaysettings_overtime"
+                                                id="rpaysettings_overtime">
+                                            <label class="form-check-label" for="formRadios2">
+                                                Multiple Hour OT Rate
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <h4 class="text-info">Attendance</h4>
+                                        <label for="formrow-email-input" class="form-label">Grace Period <span
+                                                class="text-danger">(Mins.)</span></label>
+                                        <input type="text" class="form-control" id="rpaysettings_graceperiod"
+                                            name="rpaysettings_graceperiod" value="{{@POST.rpaysettings_graceperiod}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="formrow-email-input" class="form-label">Standard Working
+                                            Hours</label>
+                                        <input type="text" class="form-control" id="rpaysettings_standard_workinghours"
+                                            name="rpaysettings_standard_workinghours"
+                                            value="{{@POST.rpaysettings_standard_workinghours}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="formrow-email-input" class="form-label">Allowed Overtime Hours
+                                            Beyond</label>
+                                        <input type="text" class="form-control"
+                                            id="rpaysettings_allowed_overtime_hours_beyond"
+                                            name="rpaysettings_allowed_overtime_hours_beyond"
+                                            value="{{@POST.rpaysettings_allowed_overtime_hours_beyond}}">
+                                    </div>
+                                </div>
+
+
+                                <div class="mb-4">
+                                    <label>
+                                        <h4 class="text-info">Night Differential Hours Between</h4>
+                                    </label>
+                                    <div class="input-group">
+
+                                        <input name="rpaysettings_night_hours_between_from" type="text"
+                                            class="form-control" data-provide="timepicker"
+                                            value="{{@POST.rpaysettings_night_hours_between_from}}">
+                                        <span class="input-group-text">and</span>
+
+                                        <input name="rpaysettings_night_hours_between_to" type="text"
+                                            class="form-control" data-provide="timepicker"
+                                            value="{{@POST.rpaysettings_night_hours_between_to}}">
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div style="display:flex; justify-content:flex-end; width:100%; padding:0;">
+                                    <button type="submit" class="btn btn-primary w-md" id="btnupdate"
+                                        name="btnupdate">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end card body -->
+                </div>
+                <!-- end card -->
+            </div>
+        </div>
+    </div>
+</div>

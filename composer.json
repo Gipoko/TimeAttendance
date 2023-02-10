@@ -1,0 +1,13 @@
+{
+    "require": {
+        "alhimik1986/php-excel-templator": "^1.0",
+        "topdelivery/php-excel-templator": "^1.0",
+        "mschnieder/phpspreadsheet-template-tool": "^1.6",
+        "bcosca/fatfree": "^3.7",
+        "endroid/qr-code": "^4.4",
+        "tecnickcom/tcpdf": "^6.4",
+        "xfra35/f3-access": "^1.2",
+        "spipu/html2pdf": "^5.2",
+        "nxp/math-executor": "^2.1"
+    }
+}

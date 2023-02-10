@@ -1,0 +1,41 @@
+<!-- modal cam -->
+<div id="modalCam" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">Capture Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="frmCamUpload">
+                <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-md-12 justify-content-center mb-3">
+                                <select class="form-select" id="camOption" name="camOption">
+                                    <option value="user">Front</option>
+                                    <option value="environment">Back</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <p style="display:none;" id="tperson_hash"></p>
+                                <p id="my_camera" class="text-center "></p>
+                                <!-- <div id="my_camera" width="100%" class="text-center"></div> -->
+                                <input type="hidden" name="image" id="imageData" class="image-tag">
+                                <input type=button class="btn btn-success" value="Take Snapshot" id="btnCamClick">
+
+                            </div>
+                            <div class="col-md-12">
+                                <div id="camResult" style="width:150px;">Your captured image will appear here...</div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Upload Picture</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

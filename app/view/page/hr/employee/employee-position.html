@@ -1,0 +1,95 @@
+<div id="modalChangeEmploymentPosition" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form id="frmChangeEmploymentPosition" name="frmChangeEmploymentPosition" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mySmallModalLabel">Update Employee Job Position</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <input type="text" id="EmployeePositionTempID" name="EmployeePositionTempID">
+                        <input type="text" id="EmployeePositionTempWorkID" name="EmployeePositionTempWorkID">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">Curent Job Position</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="currentJobPosition" name="currentJobPosition"
+                                         readonly>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">Current Grade</label>
+                            <div class="input-group">
+                                <input id="currentGrade" name="currentGrade" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">Curent Step No</label>
+                            <div class="input-group">
+                                <input id="currentStep" name="currentStep" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">Current Salary</label>
+                            <div class="input-group">
+                                <input id="currentSalary" name="currentSalary" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <div class="row">
+                                <div class="col-lg-12 mb-3">
+                                    <label class="form-label">New Job Position</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="ddNewJobPosition" name="ddNewJobPosition"
+                                         readonly>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">New Grade</label>
+                            <div class="input-group">
+                                <input type="number" id="newGrade" name="newGrade" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">New Step No</label>
+                            <div class="input-group">
+                                <input type="number" id="newStep" name="newStep" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">New Salary</label>
+                            <div class="input-group">
+                                <input id="newSalary" name="newSalary" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
