@@ -98,6 +98,11 @@ $(document).ready(function(){
                   },
          }).then(function ($data) {
     
+          if($data.attendance === null){
+            $('#datatable-buttons tbody > tr').remove();
+            alert("No data Available");
+            return false;
+          }
             $tableAll.clear().rows.add($data.attendance).draw();
            
            
